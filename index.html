@@ -1,0 +1,1934 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Human Representation in Intelligent Systems — Group 1 Master Deliverable</title>
+<meta name="description" content="Structured systematic literature review of dynamic human representation in intelligent systems: ten benchmark studies (2021–2026), a seven-dimensional framework (D1–D7), a six-gap research taxonomy, and a PRISMA 2020-informed reporting checklist.">
+<meta name="author" content="Group 1 — Advanced Research Assignment">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Human Representation in Intelligent Systems">
+<meta property="og:description" content="Group 1 · Master Deliverable — Official 10-Benchmark v3. A structured systematic literature review of ten benchmark studies across the seven representational state dimensions, reported against a PRISMA 2020-informed checklist.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F1E2D'/%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23BE4F1E'/%3E%3Ccircle cx='32' cy='16' r='3.4' fill='%23BE4F1E'/%3E%3Ccircle cx='48' cy='16' r='3.4' fill='%23BE4F1E'/%3E%3Ccircle cx='16' cy='32' r='3.4' fill='%23E9C3AE'/%3E%3Ccircle cx='32' cy='32' r='3.4' fill='%23E9C3AE'/%3E%3Ccircle cx='48' cy='32' r='3.4' fill='%23E9C3AE'/%3E%3Crect x='12' y='44' width='40' height='3' fill='%23E9C3AE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('rm');
+    }
+  } catch (e) {}
+})();
+</script>
+<style>
+:root{
+  --ink:#0F1E2D;
+  --ink-2:#1B3247;
+  --body:#243A4C;
+  --muted:#5E6F7B;
+  --paper:#F2F3EE;
+  --paper-2:#E7EAE2;
+  --card:#F9FAF5;
+  --flame:#BE4F1E;
+  --flame-2:#E9C3AE;
+  --line:#D3D7CE;
+  --line-strong:#B9C0B4;
+  --maxw:1150px;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --display:"Space Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --fa:"Vazirmatn","Segoe UI",Tahoma,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(to right, rgba(15,30,45,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,30,45,.035) 1px, transparent 1px);
+  background-size:34px 34px;
+  color:var(--body);
+  font-family:var(--serif);
+  font-size:clamp(16px,1.02vw,18.5px);
+  line-height:1.66;
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-wrap:break-word;
+}
+img,svg{max-width:100%}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px;transition:color .18s ease}
+a:hover{color:var(--flame)}
+:focus-visible{outline:2px solid var(--flame);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:50;font-family:var(--mono);font-size:12px}
+.skip:focus{left:12px;top:12px}
+
+/* ── shared type ───────────────────────────────────────────── */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.mono{font-family:var(--mono)}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 14px;display:flex;align-items:center;gap:10px;
+}
+.eyebrow .num{color:var(--flame);font-weight:600}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line);max-width:120px}
+.fa{
+  font-family:var(--fa);direction:rtl;unicode-bidi:isolate;line-height:1.9;
+}
+.fa.block{display:block;text-align:right}
+
+/* ── hero ─────────────────────────────────────────────────── */
+.hero{background:var(--ink);color:#EFF0EB;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(900px 420px at 82% -10%, rgba(190,79,30,.30), transparent 62%),
+    radial-gradient(700px 460px at 8% 112%, rgba(70,120,150,.22), transparent 60%);
+  pointer-events:none;
+}
+.hero-in{position:relative;max-width:var(--maxw);margin:0 auto;padding:34px 24px clamp(40px,6vw,72px)}
+.hero-top{
+  display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(239,240,235,.62);padding-bottom:18px;border-bottom:1px solid rgba(233,195,174,.35);
+}
+.hero-top .brand{color:var(--flame-2);font-weight:600}
+.hero-top .push{margin-left:auto}
+.hero h1{
+  font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(2.15rem,5.4vw,4.15rem);line-height:.96;letter-spacing:-.028em;
+  font-weight:600;margin:clamp(34px,5vw,56px) 0 0;color:#fff;text-wrap:balance;
+}
+.hero h1 .dim{color:var(--flame-2)}
+.thesis{
+  margin:22px 0 0;max-width:56ch;color:rgba(239,240,235,.8);
+  font-size:clamp(16px,1.35vw,19.5px);line-height:1.62;
+}
+.spec{
+  display:grid;gap:0 34px;grid-template-columns:1fr;margin:clamp(30px,4.4vw,48px) 0 0;
+  border-top:1px solid rgba(239,240,235,.16);
+}
+@media (min-width:720px){.spec{grid-template-columns:1fr 1fr}}
+.spec > div{display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;padding:12px 0;border-bottom:1px solid rgba(239,240,235,.12)}
+.spec dt{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,240,235,.5);padding-top:3px;margin:0}
+.spec dd{margin:0;font-size:14.5px;line-height:1.5;color:rgba(239,240,235,.94)}
+.spec dd .sep{color:rgba(239,240,235,.35);padding:0 6px}
+
+/* dimension spectrum */
+.spectrum{display:grid;grid-template-columns:repeat(7,1fr);position:relative}
+.spectrum a{
+  display:flex;flex-direction:column;justify-content:flex-end;gap:6px;
+  padding:16px 12px 14px;min-height:104px;color:#fff;text-decoration:none;
+  border-right:1px solid rgba(15,30,45,.25);transition:filter .2s ease;
+}
+.spectrum a:last-child{border-right:0}
+.spectrum a:hover,.spectrum a:focus-visible{filter:brightness(1.16)}
+.spectrum .code{font-family:var(--mono);font-size:11px;letter-spacing:.1em;opacity:.85}
+.spectrum .nm{font-family:var(--display);font-size:11.5px;line-height:1.25;letter-spacing:.01em;opacity:.95;max-width:12ch}
+.d1{background:#0F2A44}.d2{background:#B84A1C}.d3{background:#17453E}.d4{background:#A9713E}
+.d5{background:#455C69}.d6{background:#61798A}.d7{background:#8298A5}
+@media (max-width:700px){
+  .spectrum{display:flex;overflow-x:auto;scroll-snap-type:x proximity;background:var(--ink);-webkit-overflow-scrolling:touch}
+  .spectrum a{flex:0 0 142px;min-height:84px;padding:12px 11px;scroll-snap-align:start}
+  .spectrum .nm{font-size:10.5px;max-width:none}
+}
+
+/* ── shell + index ────────────────────────────────────────── */
+.shell{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:1060px){
+  .shell{grid-template-columns:186px minmax(0,1fr);gap:58px}
+  .toc{position:sticky;top:34px;align-self:start;height:fit-content;padding:64px 0 40px}
+}
+.toc{display:none}
+@media (min-width:1060px){.toc{display:block}}
+.toc h2{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:500}
+.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.toc li{margin:0}
+.toc a{
+  display:flex;gap:9px;padding:7px 0 7px 13px;margin-left:-1px;
+  border-left:2px solid transparent;text-decoration:none;color:var(--muted);
+  font-family:var(--display);font-size:13px;line-height:1.35;transition:color .16s,border-color .16s;
+}
+.toc a .n{font-family:var(--mono);font-size:10px;color:var(--line-strong);padding-top:2px}
+.toc a:hover{color:var(--ink)}
+.toc a[aria-current="true"]{color:var(--ink);border-left-color:var(--flame)}
+.toc a[aria-current="true"] .n{color:var(--flame)}
+
+/* mobile contents */
+.toc-mobile{max-width:var(--maxw);margin:0 auto;padding:22px 24px 0}
+@media (min-width:1060px){.toc-mobile{display:none}}
+.toc-mobile details{border:1px solid var(--line);background:var(--card)}
+.toc-mobile summary{
+  cursor:pointer;padding:12px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;
+}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::after{content:"＋";color:var(--flame);font-size:13px}
+.toc-mobile details[open] summary::after{content:"－"}
+.toc-mobile ol{list-style:none;margin:0;padding:0 16px 14px}
+.toc-mobile li a{display:block;padding:7px 0;color:var(--ink-2);text-decoration:none;font-family:var(--display);font-size:14px;border-top:1px solid var(--line)}
+.toc-mobile ol{padding-top:2px}
+
+/* ── sections ─────────────────────────────────────────────── */
+main{min-width:0;padding-bottom:24px}
+.sec{padding:clamp(44px,6vw,80px) 0 0;border-top:1px solid var(--line)}
+.sec:first-of-type{border-top:0}
+.sec > .sec-head{margin-bottom:clamp(22px,3vw,34px)}
+.sec h2{
+  font-family:var(--display);font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(1.5rem,2.9vw,2.15rem);line-height:1.12;margin:0;color:var(--ink);
+  text-wrap:balance;
+}
+.sec .sub-fa{margin:12px 0 0;color:var(--muted);font-size:15px}
+.prose p{max-width:71ch;margin:0 0 1.05em}
+.prose p:last-child{margin-bottom:0}
+.lede{font-size:1.06em;color:var(--ink-2)}
+
+/* callout */
+.callout{
+  margin:26px 0;padding:18px 20px;background:var(--card);
+  border-left:3px solid var(--flame);max-width:76ch;
+}
+.callout p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.callout .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:6px}
+
+/* overview block in hero? used in section 0 */
+.overview{display:grid;gap:14px 30px;grid-template-columns:1fr;margin:0 0 8px;padding:22px 24px;background:var(--card);border:1px solid var(--line)}
+@media (min-width:700px){.overview{grid-template-columns:1fr 1fr}}
+.ov-item .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.ov-item .v{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+
+/* ── tables ───────────────────────────────────────────────── */
+figure.tbl{margin:clamp(26px,3.4vw,40px) 0 0}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);background:var(--card)}
+table.data{width:100%;border-collapse:collapse;font-family:var(--display);font-size:13.5px;line-height:1.42;min-width:640px}
+table.data caption{caption-side:top;text-align:left}
+table.data th{
+  text-align:left;vertical-align:bottom;padding:12px 14px;background:var(--ink);color:#EDEFEA;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+  border-right:1px solid rgba(237,239,234,.14);white-space:nowrap;
+}
+table.data th:last-child{border-right:0}
+table.data td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top;color:var(--body);background:var(--card)}
+table.data tbody tr:nth-child(even) td{background:#F4F6EF}
+table.data tbody tr:hover td{background:#EDF0E6}
+table.data td:first-child{color:var(--ink);font-weight:500}
+table.data .tag{
+  display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 6px;border:1px solid var(--line-strong);color:var(--muted);margin:2px 3px 0 0;white-space:nowrap;
+}
+table.data .tag.res{border-color:#A8B6C0;color:#3F5768;background:#EDF1F3}
+table.data .tag.sur{border-color:var(--flame-2);color:#9A3F16;background:#FBF0E9}
+table.data .dim-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px}
+table.data code{
+  font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--ink-2);
+  background:rgba(15,30,45,.05);padding:2px 6px;display:block;overflow-wrap:anywhere;
+}
+.dimtag{
+  display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:18px;padding:0 4px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;font-weight:500;
+  background:rgba(15,30,45,.07);color:var(--ink-2);border:1px solid transparent;
+}
+figcaption{
+  margin-top:10px;padding-top:9px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--muted);line-height:1.5;
+}
+figcaption .fa{display:block;margin-top:5px}
+.cap-line{margin:0 0 8px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.cap-line .fa{display:block;margin-top:5px}
+.subhead{
+  font-family:var(--display);font-size:17px;font-weight:600;color:var(--ink);
+  letter-spacing:-.01em;margin:46px 0 8px;scroll-margin-top:24px;line-height:1.3;
+}
+.cap-id{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  background:var(--paper-2);padding:2px 7px;margin-right:8px;display:inline-block;
+}
+@media (max-width:760px){
+  table.data{min-width:0;display:block;font-size:13px}
+  table.data thead{display:none}
+  table.data tbody,table.data tr,table.data td{display:block;width:100%}
+  table.data tr{border-top:2px solid var(--ink);padding:6px 0 12px}
+  table.data tr:first-child{border-top:0}
+  table.data td{
+    border-top:0;padding:6px 0 6px 108px;position:relative;background:transparent !important;
+    min-height:26px;
+  }
+  table.data td::before{
+    content:attr(data-label);position:absolute;left:0;top:8px;width:98px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);line-height:1.5;
+  }
+  table.data td:first-child{font-size:15px;line-height:1.35}
+}
+
+/* ── figure 1.1: chart ────────────────────────────────────── */
+.chart{margin:0;padding:22px 20px 16px;background:var(--card);border:1px solid var(--line)}
+.chart-title{font-family:var(--display);font-weight:500;font-size:13px;color:var(--ink);margin:0 0 2px}
+.chart-sub{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin:0 0 18px}
+.bars{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) 58px;gap:8px 14px;align-items:center;font-size:13px}
+@media (max-width:620px){.bars{grid-template-columns:minmax(90px,120px) minmax(0,1fr) 48px;font-size:12px}}
+.bars .who{color:var(--ink-2);line-height:1.3;text-align:right;font-family:var(--display)}
+.bars .who .sub{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bars .track{background:var(--paper-2);height:20px;position:relative}
+.bars .fill{display:block;height:100%;background:var(--ink);position:relative;min-width:0}
+.bars .fill.zero{background:repeating-linear-gradient(135deg,var(--line) 0 5px,transparent 5px 10px);height:20px}
+.bars .val{font-family:var(--mono);font-size:11px;color:var(--ink);white-space:nowrap}
+.bars .val.new{color:var(--muted);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase}
+.axis{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) 58px;gap:14px;margin-top:6px}
+@media (max-width:620px){.axis{grid-template-columns:minmax(90px,120px) minmax(0,1fr) 48px}}
+.axis .ticks{position:relative;height:22px;border-top:1px solid var(--line-strong);display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--muted);padding-top:3px}
+.axis .ticks span{transform:translateX(-50%)}
+.axis .ticks span:first-child{transform:none}
+.axis .ticks span:last-child{transform:translateX(-100%)}
+@media (max-width:560px){.axis{display:none}}
+
+/* ── figure 3.1: tree ─────────────────────────────────────── */
+.tree-scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card);padding:26px 18px 22px}
+.tree{min-width:660px}
+.tree-root{
+  margin:0 auto;width:250px;text-align:center;background:var(--ink);color:#F0F1EC;
+  padding:12px 14px;font-family:var(--display);font-size:12px;line-height:1.35;font-weight:500;
+  position:relative;
+}
+.tree-root::after{content:"";position:absolute;left:50%;bottom:-22px;width:1px;height:22px;background:var(--line-strong)}
+.tree-stem{height:22px}
+.tree-rail{height:22px;position:relative}
+.tree-rail::before{
+  content:"";position:absolute;top:0;left:calc(100% / 14);right:calc(100% / 14);height:1px;background:var(--line-strong);
+}
+.tree-row{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.tree-node{
+  position:relative;padding:12px 8px;text-align:center;color:#fff;
+  font-family:var(--mono);font-size:10px;letter-spacing:.02em;line-height:1.35;
+}
+.tree-node::before{content:"";position:absolute;left:50%;top:-22px;width:1px;height:22px;background:var(--line-strong)}
+.tree-node .code{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;margin-bottom:5px}
+.tree-node .nm{display:block;font-family:var(--display);font-size:9.5px;line-height:1.25;opacity:.95;letter-spacing:0}
+.tree-note{margin-top:16px;font-size:12px;color:var(--muted);text-align:center;font-style:italic}
+
+/* ── dimension definitions ────────────────────────────────── */
+.dims{display:grid;gap:0;margin:26px 0 0;border-top:1px solid var(--line)}
+@media (min-width:820px){.dims{grid-template-columns:1fr 1fr;column-gap:40px}}
+.dim-row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.dim-row .code{
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:#fff;background:var(--ink);
+  height:20px;display:flex;align-items:center;justify-content:center;
+}
+.dim-row:nth-child(2) .code{background:#B84A1C}
+.dim-row:nth-child(7) .code{background:#455C69}
+.dim-row .nm{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--ink);display:block;margin-bottom:3px;letter-spacing:-.005em}
+.dim-row .desc{font-size:14px;line-height:1.55;color:var(--body);margin:0}
+
+/* ── paper cards ──────────────────────────────────────────── */
+.papers{display:grid;gap:18px;grid-template-columns:1fr;margin-top:32px}
+@media (min-width:880px){.papers{grid-template-columns:1fr 1fr}}
+.paper{
+  background:var(--card);border:1px solid var(--line);border-top:2px solid var(--ink);
+  padding:20px 20px 16px;display:flex;flex-direction:column;gap:13px;
+}
+.paper[hidden]{display:none}
+.paper-head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.paper-head .who{font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--ink);letter-spacing:-.01em;line-height:1.3}
+.paper-head .yr{font-family:var(--mono);font-size:11px;color:var(--flame)}
+.paper-head .venue{
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--line-strong);padding:2px 6px;white-space:nowrap;
+}
+.paper-head .venue.sur{border-color:var(--flame-2);color:#9A3F16;background:#FBF0E9}
+.paper-title{font-size:14.5px;color:var(--ink-2);font-style:italic;margin:-4px 0 0;line-height:1.45}
+.paper dl{margin:0;display:grid;gap:9px}
+.paper dt{
+  font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  margin:0 0 1px;
+}
+.paper dd{margin:0;font-size:13.8px;line-height:1.5;color:var(--body)}
+.paper-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:11px;border-top:1px solid var(--line);margin-top:auto}
+.paper-foot .dim-tags{margin:0}
+.paper-foot .doi{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.paper-foot .doi:hover{color:var(--flame);border-color:var(--flame)}
+.paper-foot .nodoi{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--line-strong)}
+
+/* ── coverage grid ────────────────────────────────────────── */
+.cov-wrap{margin-top:34px}
+.cov-head{margin:34px 0 12px}
+.cov-head h3{font-family:var(--display);font-size:16px;font-weight:600;color:var(--ink);margin:0;letter-spacing:-.01em}
+.cov-head p{margin:6px 0 0;font-size:12.5px;color:var(--muted);max-width:62ch;text-align:left}
+.cov-legend{font-family:var(--mono);font-size:10px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin:0 0 10px}
+.cov-legend .sw{display:inline-block;width:9px;height:9px;background:var(--ink);margin-right:5px;vertical-align:-1px}
+.cov-legend .sw.empty{background:transparent;border:1px solid var(--line-strong)}
+.cov-scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+table.cov{border-collapse:collapse;width:100%;min-width:620px;font-family:var(--display);font-size:12.5px}
+table.cov caption{caption-side:top;text-align:left;padding:0 0 8px}
+table.cov th{padding:11px 8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--muted);border-bottom:1px solid var(--line)}
+table.cov thead th button{
+  all:unset;cursor:pointer;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;
+  padding:3px 5px;border:1px solid transparent;display:inline-block;
+}
+table.cov thead th button:hover{color:var(--ink);border-color:var(--line-strong)}
+table.cov thead th button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+table.cov th.paper-col{text-align:left;padding-left:14px;width:38%}
+table.cov th.dim-col{width:calc(62% / 7);text-align:center}
+table.cov td{padding:9px 8px;border-top:1px solid var(--line);text-align:center}
+table.cov td.paper-col{text-align:left;padding-left:14px;color:var(--ink-2);line-height:1.3}
+table.cov td.paper-col .venue-mini{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+table.cov .mk{display:inline-block;width:11px;height:11px;background:var(--ink);opacity:.9}
+table.cov .mk.off{background:transparent;border:1px solid var(--line);opacity:1}
+table.cov tbody tr:hover td{background:#EFF2E8}
+table.cov tfoot td{border-top:2px solid var(--ink);font-family:var(--mono);font-size:10.5px;color:var(--ink);padding:10px 8px;background:var(--paper-2)}
+table.cov tfoot td.paper-col{text-align:left;padding-left:14px;letter-spacing:.08em;text-transform:uppercase;font-size:9.5px}
+table.cov td.hl,table.cov th.hl{background:#E3E8DA}
+.filter-status{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin:12px 0 0;min-height:1.4em}
+.filter-status b{color:var(--flame);font-weight:500}
+
+/* ── gaps ─────────────────────────────────────────────────── */
+.gaps{margin-top:30px}
+.gap{border-top:1px solid var(--ink);padding:20px 0 6px}
+.gap-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;margin-bottom:14px}
+.gap-id{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--flame);font-weight:600}
+.gap-title{font-family:var(--display);font-size:16.5px;font-weight:600;color:var(--ink);margin:0;letter-spacing:-.01em}
+.tier{
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;white-space:nowrap;
+}
+.tier.a{background:var(--flame);color:#fff}
+.tier.b{border:1px solid var(--flame);color:var(--flame)}
+.tier.c{border:1px solid var(--line-strong);color:var(--muted)}
+.gap-body{display:grid;gap:14px 28px;grid-template-columns:1fr}
+@media (min-width:820px){.gap-body{grid-template-columns:1fr 1fr}}
+.gap-field .k{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px}
+.gap-field p{margin:0;font-size:13.8px;line-height:1.55;color:var(--body)}
+.gap-field.question{grid-column:1/-1;padding:12px 14px;background:var(--card);border-left:2px solid var(--flame)}
+.gap-field.question p{color:var(--ink);font-size:14px}
+.gap-field .ev{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.6}
+
+/* ── references ───────────────────────────────────────────── */
+ol.refs{list-style:none;counter-reset:ref;margin:26px 0 0;padding:0;max-width:78ch}
+ol.refs li{
+  counter-increment:ref;position:relative;padding:11px 0 11px 42px;border-top:1px solid var(--line);
+  font-size:14.5px;line-height:1.6;color:var(--ink-2);word-break:break-word;
+}
+ol.refs li::before{
+  content:"[" counter(ref) "]";position:absolute;left:0;top:11px;font-family:var(--mono);
+  font-size:11px;color:var(--muted);
+}
+ol.refs li i{font-style:italic}
+ol.refs .doi-link{font-family:var(--mono);font-size:12px;color:var(--flame);text-decoration:none;border-bottom:1px solid var(--flame-2);white-space:nowrap}
+ol.refs .doi-link:hover{background:#FBF0E9}
+.ref-note{margin:22px 0 0;font-size:12.5px;color:var(--muted);max-width:60ch}
+
+/* ── footer ───────────────────────────────────────────────── */
+footer.site{margin-top:clamp(56px,8vw,96px);background:var(--ink);color:rgba(239,240,235,.75)}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:34px 24px 40px;display:grid;gap:16px 40px;grid-template-columns:1fr}
+@media (min-width:760px){.foot-in{grid-template-columns:1fr auto;align-items:end}}
+footer.site .f-title{font-family:var(--display);font-size:15px;color:#fff;letter-spacing:-.01em;margin:0 0 4px}
+footer.site p{margin:0;font-size:12.5px;line-height:1.6}
+footer.site .f-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,240,235,.45);text-align:left;line-height:1.9}
+@media (min-width:760px){footer.site .f-meta{text-align:right}}
+footer.site a{color:var(--flame-2)}
+footer.site a:hover{color:#fff}
+
+/* ── standard-article components ───────────────────────────── */
+.abstract-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.42)}
+.abstract-in{max-width:var(--maxw);margin:0 auto;padding:clamp(30px,4.4vw,52px) 24px;display:grid;grid-template-columns:1fr;gap:22px}
+@media (min-width:900px){.abstract-in{grid-template-columns:150px minmax(0,1fr);gap:40px}}
+.abs-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--flame);padding-top:4px;margin:0}
+.abs-label span{display:block;font-family:var(--fa);font-size:12px;letter-spacing:0;text-transform:none;color:var(--muted);margin-top:7px;direction:rtl}
+.abs-body{max-width:74ch}
+.abs-body p{margin:0 0 .85em;font-size:clamp(15px,1.15vw,16.5px);line-height:1.62;color:var(--ink-2)}
+.abs-body p:last-child{margin-bottom:0}
+.abs-body strong.run{font-family:var(--display);font-weight:600;color:var(--ink);letter-spacing:-.005em}
+.kw{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.kw .k{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--card);border:1px solid var(--line);padding:3px 8px}
+
+/* research questions / protocol */
+.rq{list-style:none;counter-reset:rq;margin:24px 0 0;padding:0;max-width:76ch}
+.rq li{counter-increment:rq;position:relative;padding:12px 0 12px 58px;border-top:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--body)}
+.rq li:first-child{border-top:0;padding-top:4px}
+.rq li::before{content:"RQ" counter(rq);position:absolute;left:0;top:13px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#fff;background:var(--ink);padding:3px 6px}
+.rq li:first-child::before{top:5px}
+
+/* selection pipeline figure */
+.flow{display:grid;grid-template-columns:1fr;gap:14px;margin:26px 0 0}
+@media (min-width:860px){.flow{grid-template-columns:repeat(4,1fr);gap:0;align-items:stretch}}
+.flow-step{position:relative;background:var(--card);border:1px solid var(--line);padding:16px 16px 15px;min-height:104px}
+@media (min-width:860px){
+  .flow-step + .flow-step{margin-left:22px;border-left:0}
+  .flow-step::before{content:"";position:absolute;left:-14px;top:50%;width:12px;height:1px;background:var(--line-strong)}
+  .flow-step::after{content:"";position:absolute;left:-4px;top:50%;width:5px;height:5px;border-top:1px solid var(--line-strong);border-right:1px solid var(--line-strong);transform:translateY(-50%) rotate(45deg)}
+}
+.flow-step .n{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:8px}
+.flow-step .t{font-family:var(--display);font-size:14px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px;line-height:1.3}
+.flow-step .d{font-size:12.5px;line-height:1.5;color:var(--muted)}
+.flow-note{margin:14px 0 0;font-size:12px;line-height:1.55;color:var(--muted);max-width:78ch}
+
+/* table group rows + small print */
+table.data tr.group td{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--flame);background:rgba(190,79,30,.06) !important;padding:8px 14px;border-top:1px solid var(--line);
+}
+table.data td .mono-s{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+.note{margin:18px 0 0;font-size:12.5px;line-height:1.6;color:var(--muted);max-width:78ch}
+.note b{color:var(--ink-2);font-weight:500}
+.was{margin:26px 0 0;padding:16px 18px;background:var(--card);border-left:3px solid var(--line-strong)}
+.was p{margin:0;font-size:13px;line-height:1.6;color:var(--ink-2)}
+.was .h{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+
+/* declarations block */
+.decl{display:grid;gap:16px;margin:26px 0 0}
+@media (min-width:820px){.decl{grid-template-columns:1fr 1fr;gap:16px 34px}}
+.decl-item{border-top:1px solid var(--line);padding-top:10px}
+.decl-item .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.decl-item p{margin:0;font-size:13.5px;line-height:1.55;color:var(--body)}
+
+.kw .kw-l{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:3px 4px 3px 0}
+
+/* contributions list */
+.contrib-list{margin:26px 0 0;padding:20px 22px;background:var(--card);border:1px solid var(--line);max-width:80ch}
+.contrib-list .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--flame);margin:0 0 10px}
+.contrib-list ol{list-style:none;counter-reset:cl;margin:0;padding:0}
+.contrib-list li{counter-increment:cl;position:relative;padding:9px 0 9px 30px;border-top:1px solid var(--line);font-size:14px;line-height:1.55;color:var(--body)}
+.contrib-list li:first-child{border-top:0}
+.contrib-list li::before{content:"C" counter(cl);position:absolute;left:0;top:11px;font-family:var(--mono);font-size:9.5px;color:var(--flame);letter-spacing:.09em}
+
+/* appendix */
+.appx-head{margin:clamp(34px,4vw,54px) 0 10px;padding-top:26px;border-top:2px solid var(--ink)}
+.appx-head .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:8px}
+.appx-head h2{font-size:clamp(1.25rem,2vw,1.6rem)}
+
+/* ── motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .72s cubic-bezier(.22,.68,.24,1) both}
+  .rise-2{animation-delay:.1s}
+  .rise-3{animation-delay:.18s}
+  .rise-4{animation-delay:.26s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+
+/* ── motion ───────────────────────────────────────────────── */
+:root{--ease:cubic-bezier(.22,.68,.24,1)}
+
+[data-reveal]{transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.js:not(.rm) [data-reveal]:not(.is-in){opacity:0;transform:translateY(16px)}
+
+.rv-child{transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--n,0) * 55ms)}
+.js:not(.rm) [data-rv-group]:not(.is-in) > .rv-child{opacity:0;transform:translateY(14px)}
+
+/* hero: masthead rule and spectrum entrance */
+@media (prefers-reduced-motion:no-preference){
+  .hero-top{animation:ruleIn .85s var(--ease) both}
+  @keyframes ruleIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .spectrum a{animation:segIn .62s var(--ease) both;transform-origin:50% 100%}
+  .spectrum a:nth-child(1){animation-delay:.42s}
+  .spectrum a:nth-child(2){animation-delay:.48s}
+  .spectrum a:nth-child(3){animation-delay:.54s}
+  .spectrum a:nth-child(4){animation-delay:.60s}
+  .spectrum a:nth-child(5){animation-delay:.66s}
+  .spectrum a:nth-child(6){animation-delay:.72s}
+  .spectrum a:nth-child(7){animation-delay:.78s}
+  @keyframes segIn{from{opacity:0;transform:translateY(14px) scaleY(.9)}to{opacity:1;transform:none}}
+}
+
+/* hero: the profile trace — a changing state drawn over time */
+.hero-in{position:relative;z-index:2}
+.hero-trace{position:absolute;z-index:1;right:-70px;top:66px;width:clamp(320px,40vw,560px);opacity:.5;pointer-events:none;display:none}
+@media (min-width:1000px){.hero-trace{display:block}}
+.trace-path{fill:none;stroke:url(#traceGrad);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1600;stroke-dashoffset:1600}
+@media (prefers-reduced-motion:no-preference){.trace-path{animation:traceDraw 2.6s var(--ease) .3s forwards}}
+@keyframes traceDraw{to{stroke-dashoffset:0}}
+.trace-ghost{fill:none;stroke:rgba(233,195,174,.3);stroke-width:1;stroke-dasharray:2 8}
+.trace-dot{fill:#F3D5C2;filter:drop-shadow(0 0 6px rgba(233,195,174,.75))}
+
+/* data marks: bars grow, dots pop, connectors extend */
+.bars .fill{transform-origin:left center;transition:transform .95s var(--ease);transition-delay:calc(var(--n,0) * 60ms)}
+.js:not(.rm) .chart:not(.is-in) .fill{transform:scaleX(0)}
+
+.tree-node::before{transform-origin:top center;transition:transform .45s var(--ease)}
+.js:not(.rm) [data-rv-group]:not(.is-in) .tree-node::before{transform:scaleY(0)}
+
+table.cov .mk{transition:transform .5s var(--ease) .04s,opacity .5s var(--ease) .04s}
+.js:not(.rm) table.cov tbody:not(.is-in) .mk{transform:scale(.45);opacity:.35}
+
+/* micro-interactions */
+.paper{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-top-color .3s var(--ease),opacity .25s var(--ease)}
+@media (hover:hover){
+  .paper:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(15,30,45,.55)}
+}
+.paper.is-out{opacity:0;transform:scale(.97)}
+.paper.is-enter{opacity:0;transform:translateY(10px)}
+
+.dim-row{transition:background .25s var(--ease)}
+@media (hover:hover){.dim-row:hover{background:rgba(15,30,45,.028)}}
+
+table.data td{transition:background .18s var(--ease)}
+table.cov thead th button{transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.toc a{transition:color .18s var(--ease),border-color .25s var(--ease),padding-left .25s var(--ease)}
+.toc a[aria-current="true"]{padding-left:19px}
+.paper-foot .doi{transition:color .2s var(--ease),border-color .2s var(--ease)}
+.spectrum .nm{transition:transform .25s var(--ease)}
+.spectrum a:hover .nm{transform:translateY(-2px)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  .hero-trace,.trace-dot{display:none}
+  .trace-path{stroke-dasharray:none;stroke-dashoffset:0}
+}
+
+/* ── print ────────────────────────────────────────────────── */
+@media print{
+  :root{--paper:#fff}
+  body{background:#fff;font-size:11pt;color:#111}
+  .hero{background:#fff;color:#111;border-bottom:2px solid #111}
+  .hero::before,.spectrum,.hero-trace{display:none}
+  [data-reveal],[data-rv-group] > *{opacity:1 !important;transform:none !important}
+  .bars .fill{transform:none !important}
+  .hero h1{color:#111;font-size:26pt}
+  .hero h1 .dim{color:#111}
+  .thesis,.spec dd{color:#222}
+  .hero-top{color:#444;border-color:#bbb}
+  .hero-top .brand{color:#444}
+  .toc,.toc-mobile,.skip{display:none}
+  .shell{display:block;max-width:none;padding:0}
+  .sec{break-inside:avoid;padding-top:18pt}
+  .sec h2{font-size:16pt}
+  .paper,.chart,.table-scroll,.tree-scroll,.cov-scroll{break-inside:avoid;border-color:#999}
+  a{color:#111;text-decoration:none}
+  .paper-foot .doi,ol.refs .doi-link{border:0;color:#333}
+  table.data th{background:#eee;color:#111;border:1px solid #999}
+  table.data td{border:1px solid #ccc;background:#fff !important}
+  footer.site{background:#fff;color:#333}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <div class="hero-in">
+    <p class="hero-top">
+      <span class="brand">Group 1</span>
+      <span>Master deliverable</span>
+      <span>Official 10-benchmark · v3</span>
+      <span class="push">2026</span>
+    </p>
+    <h1 class="rise">Dynamic human<br>representation in<br><span class="dim">intelligent systems</span></h1>
+    <p class="thesis rise rise-2">A structured systematic literature review, comparative synthesis &amp; research-gap taxonomy — ten benchmark studies read across the seven representational state dimensions of a human being.</p>
+
+    <dl class="spec rise rise-3">
+      <div><dt>Course</dt><dd>Advanced research assignment</dd></div>
+      <div><dt>Leadership</dt><dd>Amin Saadati (leader)<span class="sep">·</span>Mobina Mousavi (co-leader)</dd></div>
+      <div><dt>Team</dt><dd>13 active contributors</dd></div>
+      <div><dt>Methodology</dt><dd>Structured SLR + 7-dimensional framework</dd></div>
+      <div><dt>Corpus</dt><dd>10 benchmark studies (7 empirical + 3 reviews)</dd></div>
+      <div><dt>Time window</dt><dd>2021 – 2026</dd></div>
+      <div><dt>Databases</dt><dd>Google Scholar · ACM · IEEE Xplore · ScienceDirect</dd></div>
+      <div><dt>Reporting</dt><dd>PRISMA 2020-informed checklist · structured SLR</dd></div>
+    </dl>
+  </div>
+
+  <svg class="hero-trace" viewBox="0 0 620 440" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="traceGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#E9C3AE" stop-opacity="0"/>
+        <stop offset=".45" stop-color="#E9C3AE" stop-opacity=".9"/>
+        <stop offset="1" stop-color="#BE4F1E" stop-opacity=".95"/>
+      </linearGradient>
+    </defs>
+    <path class="trace-ghost" d="M0,320 C70,320 86,206 152,206 S222,330 286,318 350,168 414,178 476,296 552,266 600,138 620,150"/>
+    <path id="tracePath" class="trace-path" d="M0,300 C66,300 80,190 148,192 S214,312 278,302 342,156 406,170 470,286 544,254 594,124 620,138"/>
+    <circle class="trace-dot" r="5.5">
+      <animateMotion dur="13s" repeatCount="indefinite">
+        <mpath href="#tracePath"/>
+      </animateMotion>
+    </circle>
+  </svg>
+
+  <nav class="spectrum" aria-label="The seven representational state dimensions">
+    <a class="d1" href="#dimensions"><span class="code">D1</span><span class="nm">Stable personal attributes</span></a>
+    <a class="d2" href="#dimensions"><span class="code">D2</span><span class="nm">Historical behavior trajectories</span></a>
+    <a class="d3" href="#dimensions"><span class="code">D3</span><span class="nm">Explicit goals &amp; preferences</span></a>
+    <a class="d4" href="#dimensions"><span class="code">D4</span><span class="nm">Current intentions &amp; needs</span></a>
+    <a class="d5" href="#dimensions"><span class="code">D5</span><span class="nm">Constraints &amp; hard limits</span></a>
+    <a class="d6" href="#dimensions"><span class="code">D6</span><span class="nm">Context &amp; environment</span></a>
+    <a class="d7" href="#dimensions"><span class="code">D7</span><span class="nm">Temporal dynamics &amp; drift</span></a>
+  </nav>
+</header>
+
+<section class="abstract-band" aria-labelledby="abs-h">
+  <div class="abstract-in">
+    <h2 class="abs-label" id="abs-h">Abstract<span lang="fa" dir="rtl">چکیده</span></h2>
+    <div class="abs-body">
+      <p><strong class="run">Background.</strong> Intelligent systems increasingly act on a changing model of a person, but the literature that builds such models is split across dynamic user modeling (DUM), recommender systems (RecSys) and intelligent matching (IM), and the three rarely share a definition of what is being represented.</p>
+      <p><strong class="run">Objective.</strong> To synthesise ten benchmark studies published 2021–2026 through a seven-dimensional account of human state representation (D1–D7), and to derive a taxonomy of the research gaps the corpus leaves open.</p>
+      <p><strong class="run">Methods.</strong> A protocol-driven structured review: five Boolean strings across four databases; eligibility criteria fixed before screening; a six-field extraction schema with four observable appraisal attributes; comparative and thematic synthesis rather than meta-analysis; a purposive benchmark corpus of ten studies (seven empirical, three reviews/surveys); reporting mapped to a PRISMA 2020-informed checklist, with deviations stated.</p>
+      <p><strong class="run">Results.</strong> Two dimensions dominate: history (D2) and drift (D7) are modelled by nine of the ten studies, while constraints (D5) and environment (D6) appear in three and two respectively, and the median study covers four of the seven dimensions. One study spans all seven, but through separate components rather than a single joint objective. Three strands explain the pattern — temporal sequence models, LLM-based agents, and bilateral/lifelong adaptation — each expanding one dimension at the cost of another.</p>
+      <p><strong class="run">Conclusions.</strong> Six gaps follow; the two Tier A gaps, a joint seven-dimensional objective and streaming cold-start scoring, are prerequisites for the other four. The review's own limitations — a purposive corpus, unarchived screening counts, and single-coder extraction — are reported rather than hidden.</p>
+      <p class="kw"><span class="kw-l">Keywords</span>
+        <span class="k">dynamic user modeling</span>
+        <span class="k">recommender systems</span>
+        <span class="k">intelligent matching</span>
+        <span class="k">preference drift</span>
+        <span class="k">continual learning</span>
+        <span class="k">LLM agents</span>
+        <span class="k">systematic literature review</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="toc-mobile">
+  <details>
+    <summary>Contents — 11 sections + appendix</summary>
+    <ol>
+          <li><a href="#intro">01 · Introduction</a></li>
+          <li><a href="#questions">02 · Research questions &amp; protocol</a></li>
+          <li><a href="#method">03 · Method</a></li>
+          <li><a href="#framework">04 · Conceptual framework</a></li>
+          <li><a href="#results">05 · Results</a></li>
+          <li><a href="#synthesis">06 · Thematic synthesis</a></li>
+          <li><a href="#gaps">07 · Research gaps &amp; roadmap</a></li>
+          <li><a href="#validity">08 · Validity &amp; limitations</a></li>
+          <li><a href="#conclusion">09 · Conclusion</a></li>
+          <li><a href="#declarations">10 · Declarations</a></li>
+          <li><a href="#references">11 · References</a></li>
+          <li><a href="#appendix">A · Appendix A · Reporting checklist</a></li>
+        </ol>
+  </details>
+</div>
+
+<div class="shell">
+  <nav class="toc" aria-label="Section index">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#intro"><span class="n">01</span><span>Introduction</span></a></li>
+      <li><a href="#questions"><span class="n">02</span><span>Research questions &amp; protocol</span></a></li>
+      <li><a href="#method"><span class="n">03</span><span>Method</span></a></li>
+      <li><a href="#framework"><span class="n">04</span><span>Conceptual framework</span></a></li>
+      <li><a href="#results"><span class="n">05</span><span>Results</span></a></li>
+      <li><a href="#synthesis"><span class="n">06</span><span>Thematic synthesis</span></a></li>
+      <li><a href="#gaps"><span class="n">07</span><span>Research gaps &amp; roadmap</span></a></li>
+      <li><a href="#validity"><span class="n">08</span><span>Validity &amp; limitations</span></a></li>
+      <li><a href="#conclusion"><span class="n">09</span><span>Conclusion</span></a></li>
+      <li><a href="#declarations"><span class="n">10</span><span>Declarations</span></a></li>
+      <li><a href="#references"><span class="n">11</span><span>References</span></a></li>
+      <li><a href="#appendix"><span class="n">A</span><span>Appendix A · Reporting checklist</span></a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <!-- ── 01 · introduction ───────────────────────────────── -->
+    <section class="sec" id="intro" aria-labelledby="h-intro">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">01</span><span>/ 11</span></p>
+        <h2 id="h-intro">Introduction</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">مقدمه</p>
+      </header>
+
+      <div class="prose">
+        <p>Intelligent systems increasingly act on a model of a person rather than on a single request. A recommender ranks items from an inferred taste, an agent plans a multi-step task from a stated goal, a matching platform pairs two sides of a market from reciprocal preferences. In each case the system must maintain an internal representation of a human state: who the person is, what they have done, what they want now, what they are allowed to want, where they are, and how all of this changes over time.</p>
+        <p>That representation is studied in at least three communities that rarely share a vocabulary. <strong>Dynamic User Modeling (DUM)</strong> infers and maintains evolving state vectors or profiles. <strong>Recommender Systems (RecSys)</strong> filter and rank catalog items for a target user. <strong>Intelligent Matching (IM)</strong> optimises bilateral satisfaction between two sides of a market under capacity and policy constraints. Reviews of adjacent literatures have mapped time-aware recommendation (Alabduljabbar et al., 2023) and the broader digital-twin agenda (Lin et al., 2024), but no comparative account asks how these three lines operationalise the <em>same</em> human state.</p>
+        <p>The comparison matters because the dimensions that are hardest to represent are also the least represented. A system that tracks interest but not constraints can recommend the impossible; one that models the environment but not drift will be confidently out of date. Fragmented reporting makes it difficult to see which of these weaknesses is a limitation of one study and which is shared across a field.</p>
+        <p>This review therefore asks how ten benchmark studies from 2021–2026 operationalise a seven-dimensional human state (D1–D7), which architectural mechanisms they propose for intent, drift and constraints, which dimensions they systematically under-serve, and which structural research gaps follow from that coverage pattern.</p>
+      </div>
+
+      <div class="contrib-list">
+        <p class="k">Contributions of this review</p>
+        <ol>
+          <li>A seven-dimensional operationalisation (D1–D7) that makes “dynamic human representation” comparable across DUM, RecSys and IM instead of treating the three literatures separately.</li>
+          <li>A six-field comparative matrix over ten benchmark studies, plus a dimension-coverage map derived from the same extraction, so that gaps in reporting are visible rather than inferred.</li>
+          <li>A critical synthesis of three research strands — micro-temporal sequences, LLM-driven profiling and agents, and bilateral/lifelong adaptation — and of the trade-offs each strand accepts.</li>
+          <li>A six-item gap taxonomy (G1–G6) with explicit tiers of urgency and one testable research question per gap.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── 02 · research questions and protocol ───────────── -->
+    <section class="sec" id="questions" aria-labelledby="h-questions">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">02</span><span>/ 11</span></p>
+        <h2 id="h-questions">Research questions and review protocol</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">سؤال‌های پژوهش و پروتکل مرور</p>
+      </header>
+
+      <div class="prose">
+        <p>The review answers four questions. RQ1 and RQ2 are descriptive; RQ3 and RQ4 are analytical and produce the taxonomy in §7.</p>
+      </div>
+
+      <ol class="rq">
+        <li>How does the corpus operationalise each of the seven representational state dimensions (D1–D7)?</li>
+        <li>Which architectural mechanisms are proposed for capturing micro-temporal intent, preference drift, and hard constraints?</li>
+        <li>Which dimensions are systematically under-represented across the corpus, and with what shared consequences?</li>
+        <li>Which structural research gaps follow from that coverage pattern, and in what order of urgency should they be addressed?</li>
+      </ol>
+
+      <div class="callout">
+        <span class="lbl">Review protocol</span>
+        <p>The protocol — research questions, Boolean strings, eligibility criteria, and the six-field extraction schema — was fixed before extraction began and is reported in §3. The review was not prospectively registered, and the selection was purposive rather than exhaustive (the benchmark corpus is specified by the course assignment); both facts are treated as limitations in §8 rather than as deviations hidden from the reader.</p>
+      </div>
+    </section>
+
+    <!-- ── 03 · method ────────────────────────────────────── -->
+    <section class="sec" id="method" aria-labelledby="h-method">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">03</span><span>/ 11</span></p>
+        <h2 id="h-method">Method</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">روش</p>
+      </header>
+
+      <div class="prose">
+        <p>The review follows a structured, protocol-driven design: a fixed search strategy, explicit eligibility criteria, a six-field extraction schema applied uniformly to every study, and a qualitative comparative-plus-thematic synthesis. Reporting is organised against a PRISMA 2020-informed checklist (Appendix A) with the deviations named in §3.5 and §8.</p>
+      </div>
+
+      <h3 class="subhead" data-reveal>3.1 · Search strategy</h3>
+      <div class="prose">
+        <p>To construct a corpus grounded strictly in 2021–2026 peer-reviewed literature, the group executed targeted Boolean queries across Google Scholar, ACM Digital Library, IEEE Xplore, and ScienceDirect. Strings were written per target dimension and combined with the review window; the five strings in Table 1 are the queries actually applied, reproduced verbatim.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Boolean search strings by target dimension and domain scope</caption>
+            <thead>
+              <tr>
+                <th scope="col">Target concept / dimension</th>
+                <th scope="col">Boolean search query string</th>
+                <th scope="col">Domain scope</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Concept">Dynamic user modeling (DUM)</td>
+                <td data-label="Query"><code>("user representation" OR "user modeling") AND ("recommender systems" OR "personalization")</code></td>
+                <td data-label="Scope">RecSys, AI agents</td>
+              </tr>
+              <tr>
+                <td data-label="Concept">Preference drift &amp; sequential</td>
+                <td data-label="Query"><code>("dynamic user modeling" OR "preference drift") AND ("sequential recommendation" OR "contrastive learning")</code></td>
+                <td data-label="Scope">Data mining, e-commerce</td>
+              </tr>
+              <tr>
+                <td data-label="Concept">Goal &amp; constraint awareness</td>
+                <td data-label="Query"><code>("intent-aware recommendation" OR "goal-aware recommendation" OR "reciprocal matching")</code></td>
+                <td data-label="Scope">Interactive AI, RecSys</td>
+              </tr>
+              <tr>
+                <td data-label="Concept">LLM &amp; agent elicitation</td>
+                <td data-label="Query"><code>("user preference" OR "preference elicitation") AND ("LLM" OR "AI agents" OR "tool integration")</code></td>
+                <td data-label="Scope">NLP, conversational AI</td>
+              </tr>
+              <tr>
+                <td data-label="Concept">Stream &amp; time-aware RecSys</td>
+                <td data-label="Query"><code>("stream-based recommender" OR "time-aware recommendation" OR "temporal preference")</code></td>
+                <td data-label="Scope">Cloud computing, RecSys</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 1</span>Boolean search strings applied across four academic databases, 2021–2026.
+          <span class="fa" lang="fa" dir="rtl">جدول ۱ — رشته‌های جست‌وجوی بولی اعمال‌شده در چهار پایگاه دادهٔ آکادمیک (۲۰۲۱–۲۰۲۶).</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" data-reveal>3.2 · Eligibility criteria</h3>
+      <div class="prose">
+        <p>A study entered the corpus only if it satisfied every inclusion criterion and no exclusion criterion. The criteria were written before screening so that they could not be adjusted to fit a preferred paper.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Inclusion and exclusion criteria</caption>
+            <thead>
+              <tr><th scope="col" style="width:88px">Code</th><th scope="col">Criterion</th></tr>
+            </thead>
+            <tbody>
+              <tr class="group"><td colspan="2">Inclusion</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">I1</span></td><td data-label="Criterion">Published in the 2021–2026 window.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">I2</span></td><td data-label="Criterion">Peer-reviewed venue (journal, conference, or archival review publication) or a preprint carrying a full methodological account.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">I3</span></td><td data-label="Criterion">Addresses dynamic representation of a user within DUM, RecSys, or IM.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">I4</span></td><td data-label="Criterion">Proposes a model or framework, or systematically reviews at least three of the seven dimensions.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">I5</span></td><td data-label="Criterion">Written in English.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">I6</span></td><td data-label="Criterion">Reports a DOI or arXiv identifier that allows independent verification.</td></tr>
+              <tr class="group"><td colspan="2">Exclusion</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">E1</span></td><td data-label="Criterion">Outside the review window or superseded by a later version of the same study.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">E2</span></td><td data-label="Criterion">Editorial, opinion, or position piece without a method section.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">E3</span></td><td data-label="Criterion">Application-only paper that reports a deployment but no representation model.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">E4</span></td><td data-label="Criterion">Duplicate or preliminary version of a study that is already included.</td></tr>
+              <tr><td data-label="Code"><span class="mono-s">E5</span></td><td data-label="Criterion">Insufficient reporting to extract all six fields of the extraction schema (Table 3).</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 2</span>Eligibility criteria, fixed before screening.
+          <span class="fa" lang="fa" dir="rtl">جدول ۲ — معیارهای ورود و خروج، تثبیت‌شده پیش از غربالگری.</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" data-reveal>3.3 · Data extraction and appraisal</h3>
+      <div class="prose">
+        <p>Every included study was read in full and recorded in a uniform six-field schema. Because the corpus is heterogeneous — surveys, a billion-user deployment, and small-data benchmarks — appraisal is restricted to attributes that can be observed rather than scored: whether the venue is peer-reviewed, whether datasets are disclosed, how many dimensions the study covers, and whether limitations are stated explicitly.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Extraction schema and appraisal attributes</caption>
+            <thead><tr><th scope="col" style="width:42%">Field or attribute</th><th scope="col">What is recorded</th></tr></thead>
+            <tbody>
+              <tr class="group"><td colspan="2">Extraction fields — applied to every study</td></tr>
+              <tr><td data-label="Field">1. Reference &amp; venue</td><td data-label="Detail">Authors, year, venue, and the study type (empirical, industry report, or review).</td></tr>
+              <tr><td data-label="Field">2. Problem &amp; objective</td><td data-label="Detail">The representational failure the study addresses and what it sets out to achieve.</td></tr>
+              <tr><td data-label="Field">3. Method &amp; datasets</td><td data-label="Detail">Architecture or review method, and the datasets or deployment setting.</td></tr>
+              <tr><td data-label="Field">4. Main findings</td><td data-label="Detail">The reported empirical outcome, with metric and magnitude where given.</td></tr>
+              <tr><td data-label="Field">5. Limitations</td><td data-label="Detail">Limitations stated by the authors (<em>explicit</em>) and those visible to the reviewer (<em>inferred</em>).</td></tr>
+              <tr><td data-label="Field">6. 7D mapping &amp; identifier</td><td data-label="Detail">The dimensions the study actually represents (D1–D7) and its DOI or arXiv identifier.</td></tr>
+              <tr class="group"><td colspan="2">Appraisal attributes — observable, not scored</td></tr>
+              <tr><td data-label="Attribute">Peer-review status</td><td data-label="Detail">Journal, conference, or preprint.</td></tr>
+              <tr><td data-label="Attribute">Dataset disclosure</td><td data-label="Detail">Named public datasets, named proprietary setting, or not reported.</td></tr>
+              <tr><td data-label="Attribute">Dimension coverage</td><td data-label="Detail">Number and identity of the dimensions the study models.</td></tr>
+              <tr><td data-label="Attribute">Limitations stated</td><td data-label="Detail">Whether the study discusses its own limitations explicitly.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 3</span>Six-field extraction schema and the four appraisal attributes recorded for each study.
+          <span class="fa" lang="fa" dir="rtl">جدول ۳ — طرح استخراج شش‌فیلدی و چهار ویژگی ارزیابی برای هر مطالعه.</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" data-reveal>3.4 · Study selection</h3>
+      <div class="prose">
+        <p>The strings in Table 1 produced a candidate pool which was screened first on title and abstract and then on full text, against the criteria in Table 2. Ten studies were retained as the benchmark corpus: seven empirical studies and three reviews or surveys, satisfying the assignment's requirement of at least three high-level reviews. The corpus was also balanced across the three literatures, so that no single community supplies more than half of the evidence.</p>
+        <p>Two facts about this stage are reported as they are, not as the PRISMA flow would ideally show them: the corpus is <em>purposive</em>, in that the assignment specifies a ten-paper benchmark set; and the per-database screening counts were not archived in machine-readable form. Figure 1 therefore records the stages and criteria rather than record counts, and §8 treats this as a review-level limitation.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="flow">
+          <div class="flow-step">
+            <span class="n">Stage 1 · Identification</span>
+            <span class="t">4 databases × 5 strings</span>
+            <span class="d">Google Scholar, ACM Digital Library, IEEE Xplore, ScienceDirect; window 2021–2026.</span>
+          </div>
+          <div class="flow-step">
+            <span class="n">Stage 2 · Screening</span>
+            <span class="t">Title/abstract, then full text</span>
+            <span class="d">Applied against I1–I6 and E1–E5 (Table 2), with reasons recorded per exclusion.</span>
+          </div>
+          <div class="flow-step">
+            <span class="n">Stage 3 · Extraction</span>
+            <span class="t">Six fields per study</span>
+            <span class="d">Uniform schema (Table 3) plus the four observable appraisal attributes.</span>
+          </div>
+          <div class="flow-step">
+            <span class="n">Stage 4 · Included</span>
+            <span class="t">10 studies</span>
+            <span class="d">7 empirical + 3 reviews/surveys, every study mapped to D1–D7.</span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="cap-id">Figure 1</span>Study-selection pipeline: stages and criteria applied, reported without record counts.
+          <span class="fa" lang="fa" dir="rtl">شکل ۱ — خط لولهٔ انتخاب مطالعات: مراحل و معیارهای اعمال‌شده، بدون شمارش رکوردها.</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" data-reveal>3.5 · Synthesis approach</h3>
+      <div class="prose">
+        <p>Synthesis is comparative and thematic rather than statistical. The ten studies measure different things — NDCG on public benchmarks, bilateral recall, Hit@5 in a deployment, compute cost — on different data, so pooling effect sizes would produce a number with no coherent referent. Instead, the review compares the <em>representational choices</em> the studies make (what they encode, what they assume, what they leave out), groups the mechanisms into three strands (§6), and derives the coverage statistics that ground the gap analysis (§5.3, §7).</p>
+        <p>Three deviations from the ideal protocol are recorded: the absence of a registered protocol (§2), the purposive corpus and unarchived screening counts (§3.4), and a single-coder assignment in which one member extracted each paper before group audit (§8.1).</p>
+      </div>
+    </section>
+
+    <!-- ── 04 · conceptual framework ──────────────────────── -->
+    <section class="sec" id="framework" aria-labelledby="h-framework">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">04</span><span>/ 11</span></p>
+        <h2 id="h-framework">Conceptual framework</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">چارچوب مفهومی</p>
+      </header>
+
+      <div class="prose">
+        <p>Two things must be separated before the corpus can be compared. First, the three research communities must be distinguished by <em>what they optimise</em>, not by the models they use. Second, “dynamic human representation” must be broken into dimensions that can be observed in a paper's design.</p>
+      </div>
+
+      <h3 class="subhead" data-reveal>4.1 · Dynamic user modeling, recommender systems, and intelligent matching</h3>
+      <div class="prose">
+        <p>A critical prerequisite mandated by instructor feedback is establishing clear conceptual boundaries between DUM, RecSys, and IM, while operationalising the seven core human state dimensions (D1–D7). Table 4 separates the three by research objective, state form, direction of update, and evaluation focus.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Conceptual disambiguation between DUM, RecSys and Intelligent Matching</caption>
+            <thead>
+              <tr>
+                <th scope="col">Dimension / aspect</th>
+                <th scope="col">Dynamic user modeling (DUM)</th>
+                <th scope="col">Recommender systems (RecSys)</th>
+                <th scope="col">Intelligent matching (IM)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Aspect">Primary research objective</td>
+                <td data-label="DUM">Inferring &amp; maintaining dynamic human state vectors / profiles over time.</td>
+                <td data-label="RecSys">Filtering &amp; ranking catalog items for a target user to maximise engagement.</td>
+                <td data-label="IM">Optimising bilateral / reciprocal satisfaction between multi-sided entities.</td>
+              </tr>
+              <tr>
+                <td data-label="Aspect">State representation form</td>
+                <td data-label="DUM">Evolving latent vectors, neural attention weights, or JSON profiles.</td>
+                <td data-label="RecSys">Static item/user ID embeddings or candidate scoring matrices.</td>
+                <td data-label="IM">Bilateral preference graphs, causal outcome vectors, constraint matrices.</td>
+              </tr>
+              <tr>
+                <td data-label="Aspect">Directionality &amp; constraints</td>
+                <td data-label="DUM">Unidirectional state updates triggered by interactions, text, or context.</td>
+                <td data-label="RecSys">Unidirectional item-to-user ranking based on historical similarity.</td>
+                <td data-label="IM">Bilateral mutual satisfaction under strict capacity &amp; hard constraints.</td>
+              </tr>
+              <tr>
+                <td data-label="Aspect">Core evaluation focus</td>
+                <td data-label="DUM">State tracking accuracy, intent inference, drift detection, profile fidelity.</td>
+                <td data-label="RecSys">Precision, recall, NDCG, Hit@K, catalog coverage, diversity.</td>
+                <td data-label="IM">Bilateral stability, mutual satisfaction rate, reciprocal NDCG (RNDCG).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 4</span>Conceptual disambiguation between DUM, RecSys, and Intelligent Matching.
+          <span class="fa" lang="fa" dir="rtl">جدول ۴ — ابهام‌زدایی مفهومی میان DUM، RecSys و تطبیق هوشمند.</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" id="dimensions" data-reveal>4.2 · The seven representational state dimensions</h3>
+      <div class="prose">
+        <p>Human state representation in modern intelligent platforms is defined across seven operational dimensions. Each is stated as a question a system must answer, so that a paper can be mapped to it by design rather than by keyword.</p>
+      </div>
+
+      <div class="dims" data-rv-group>
+        <div class="dim-row">
+          <span class="code">D1</span>
+          <div><span class="nm">Stable personal attributes</span><p class="desc">Who the person is: demographics, static persona traits, and fixed preference priors.</p></div>
+        </div>
+        <div class="dim-row">
+          <span class="code">D2</span>
+          <div><span class="nm">Historical behavior trajectories</span><p class="desc">What they have done: sequential clickstreams, historical purchase logs, long-term interaction arrays.</p></div>
+        </div>
+        <div class="dim-row">
+          <span class="code">D3</span>
+          <div><span class="nm">Explicit goals &amp; preferences</span><p class="desc">What they say they want: stated requirements, explicit ratings, structured profile constraints.</p></div>
+        </div>
+        <div class="dim-row">
+          <span class="code">D4</span>
+          <div><span class="nm">Current intentions &amp; immediate needs</span><p class="desc">What they want right now: session-specific goals, immediate queries, micro-temporal intents.</p></div>
+        </div>
+        <div class="dim-row">
+          <span class="code">D5</span>
+          <div><span class="nm">Constraints &amp; hard limits</span><p class="desc">What they are allowed to want: budget limits, geography, mutual capacity rules, governance policies.</p></div>
+        </div>
+        <div class="dim-row">
+          <span class="code">D6</span>
+          <div><span class="nm">Contextual &amp; environmental conditions</span><p class="desc">Where and when: location, device type, weather, social environment, time of day.</p></div>
+        </div>
+        <div class="dim-row">
+          <span class="code">D7</span>
+          <div><span class="nm">Temporal dynamics &amp; preference drift</span><p class="desc">How all of it changes: long-term interest shifts, time-decay functions, continuous profile updating.</p></div>
+        </div>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="tree-scroll">
+          <div class="tree">
+            <div class="tree-root">Dynamic human representation<br>in intelligent systems</div>
+            <div class="tree-stem"></div>
+            <div class="tree-rail"></div>
+            <div class="tree-row" data-rv-group>
+              <div class="tree-node d1"><span class="code">D1</span><span class="nm">Stable attributes</span></div>
+              <div class="tree-node d2"><span class="code">D2</span><span class="nm">Behavior trajectories</span></div>
+              <div class="tree-node d3"><span class="code">D3</span><span class="nm">Goals &amp; preferences</span></div>
+              <div class="tree-node d4"><span class="code">D4</span><span class="nm">Current intentions</span></div>
+              <div class="tree-node d5"><span class="code">D5</span><span class="nm">Constraints</span></div>
+              <div class="tree-node d6"><span class="code">D6</span><span class="nm">Context</span></div>
+              <div class="tree-node d7"><span class="code">D7</span><span class="nm">Temporal drift</span></div>
+            </div>
+            <p class="tree-note">Six of the seven dimensions can be observed at a single moment; D7 names the change itself, and is the only dimension that cannot be measured without a time axis.</p>
+          </div>
+        </div>
+        <figcaption>
+          <span class="cap-id">Figure 2</span>The seven representational state dimensions (D1–D7) — tree visualisation.
+          <span class="fa" lang="fa" dir="rtl">شکل ۲ — هفت بُعد حالت بازنمایی انسانی (D1 تا D7) — نمایش درختی.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ── 05 · results ───────────────────────────────────── -->
+    <section class="sec" id="results" aria-labelledby="h-results">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">05</span><span>/ 11</span></p>
+        <h2 id="h-results">Results</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">یافته‌ها</p>
+      </header>
+
+      <h3 class="subhead" data-reveal>5.1 · Corpus overview</h3>
+      <div class="prose">
+        <p>The corpus contains ten studies published between 2022 and 2026: seven empirical studies (one of them a billion-user industrial deployment) and three reviews or surveys. Venues span ACM TOIS, ACM CSUR, ACM KDD, ACM RecSys, IEEE ICDE, IEEE TNNLS, SAGE Open, arXiv, and the group's two benchmark entries. Datasets range from standard public benchmarks (Beauty, Sports, Yelp, ML-1M, Steam) to proprietary catalogs and simulated two-sided markets.</p>
+        <p>Two reporting observations follow from Table 5. Every study states its limitations explicitly — a positive signal for a comparative extraction. But dataset disclosure is uneven: the two benchmark entries and TARN do not name their evaluation data in the extracted record, which limits reproduction even where the method is described in detail.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Study characteristics and reporting transparency</caption>
+            <thead>
+              <tr>
+                <th scope="col">Study (year, venue, type)</th>
+                <th scope="col">Datasets reported</th>
+                <th scope="col">Dimensions covered</th>
+                <th scope="col">Limitations stated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Study">Huang et al. (2025) · ACM TOIS · empirical</td><td data-label="Datasets">Steam; proprietary catalog</td><td data-label="Dimensions"><span class="mono-s">7</span> · D1 D2 D3 D4 D5 D6 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Saadati et al. (2025a) · benchmark entry · empirical</td><td data-label="Datasets">Cross-domain review corpora — not itemised</td><td data-label="Dimensions"><span class="mono-s">2</span> · D1 D2</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Saadati et al. (2025b) · benchmark entry · empirical</td><td data-label="Datasets">Top-K streaming task sequences — not itemised</td><td data-label="Dimensions"><span class="mono-s">2</span> · D2 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Tan &amp; Jiang (2023) · arXiv · survey</td><td data-label="Datasets">n/a — survey</td><td data-label="Dimensions"><span class="mono-s">5</span> · D1 D2 D3 D4 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Meng et al. (2025) · ACM RecSys · empirical</td><td data-label="Datasets">E-commerce A/B test (1B users)</td><td data-label="Dimensions"><span class="mono-s">4</span> · D2 D3 D4 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Xie et al. (2022) · IEEE ICDE · empirical</td><td data-label="Datasets">Beauty, Sports, Yelp, ML-1M</td><td data-label="Dimensions"><span class="mono-s">3</span> · D2 D4 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Al-Ghossein et al. (2022) · ACM CSUR · survey</td><td data-label="Datasets">n/a — survey</td><td data-label="Dimensions"><span class="mono-s">3</span> · D2 D5 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Yang et al. (2024) · ACM KDD · empirical</td><td data-label="Datasets">Two-sided matching datasets — not itemised</td><td data-label="Dimensions"><span class="mono-s">4</span> · D1 D3 D5 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Zhang et al. (2022) · IEEE TNNLS · empirical</td><td data-label="Datasets">Not recorded in extraction</td><td data-label="Dimensions"><span class="mono-s">4</span> · D2 D4 D6 D7</td><td data-label="Limitations">Explicit</td></tr>
+              <tr><td data-label="Study">Freitas et al. (2026) · SAGE Open · narrative review</td><td data-label="Datasets">n/a — review</td><td data-label="Dimensions"><span class="mono-s">4</span> · D1 D2 D3 D7</td><td data-label="Limitations">Explicit</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 5</span>Study characteristics and observable reporting attributes. “Not itemised” means the extraction records a setting but not named datasets.
+          <span class="fa" lang="fa" dir="rtl">جدول ۵ — ویژگی‌های مطالعات و شاخص‌های گزارش‌دهی قابل مشاهده.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="chart" style="margin-top:34px" data-reveal>
+        <p class="chart-title">Benchmark papers per contributor</p>
+        <p class="chart-sub">10 papers · 8 contributors hold a paper · 5 hold analysis roles</p>
+        <div class="bars">
+          <span class="who">Amin Saadati<span class="sub">Group leader</span></span>
+          <span class="track"><span class="fill" style="width:100%" title="RUNSRec · DITTO"></span></span>
+          <span class="val">2 papers</span>
+
+          <span class="who">Mohammadreza Portershizi</span>
+          <span class="track"><span class="fill" style="width:100%" title="Tan &amp; Jiang (2023) · CL4SRec"></span></span>
+          <span class="val">2 papers</span>
+
+          <span class="who">Mobina Mousavi<span class="sub">Co-leader</span></span>
+          <span class="track"><span class="fill" style="width:50%" title="Freitas et al. (2026)"></span></span>
+          <span class="val">1 paper</span>
+
+          <span class="who">Amirhossein Sadeghi</span>
+          <span class="track"><span class="fill" style="width:50%" title="Meng et al. (2025)"></span></span>
+          <span class="val">1 paper</span>
+
+          <span class="who">Fatemeh Ashrafzadeh</span>
+          <span class="track"><span class="fill" style="width:50%" title="InteRecAgent"></span></span>
+          <span class="val">1 paper</span>
+
+          <span class="who">Narjes Dargahi</span>
+          <span class="track"><span class="fill" style="width:50%" title="Al-Ghossein et al. (2022)"></span></span>
+          <span class="val">1 paper</span>
+
+          <span class="who">Rojin Taghizadeh</span>
+          <span class="track"><span class="fill" style="width:50%" title="CRRS — Yang et al. (2024)"></span></span>
+          <span class="val">1 paper</span>
+
+          <span class="who">Mehdi Allahdoost</span>
+          <span class="track"><span class="fill" style="width:50%" title="TARN — Zhang et al. (2022)"></span></span>
+          <span class="val">1 paper</span>
+        </div>
+        <p class="flow-note">The remaining five contributors — Reza Poostindozi, Zahra Adabi, and Hanieh Fadaei (assigned analysis and review) and Arefeh Afsarei and Saba Salmanizadeh (no paper-level assignment recorded) — hold cross-cutting roles, so the ten papers are distributed across eight paper-holders.</p>
+        <figcaption>
+          <span class="cap-id">Figure 3</span>Distribution of paper-level assignments across the eight contributors who hold a benchmark paper.
+          <span class="fa" lang="fa" dir="rtl">شکل ۳ — توزیع تخصیص مقالات میان هشت عضو دارای مقالهٔ معیار.</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" data-reveal>5.2 · Comparative evidence matrix</h3>
+      <div class="prose">
+        <p>Table 6 is the six-field extraction for the full corpus. It is the evidence base for every claim in §6 and §7; each row can be checked against the identifier in its footer.</p>
+      </div>
+
+      <p class="filter-status" id="filter-status" role="status" aria-live="polite">Showing all 10 studies.</p>
+
+      <div class="papers" id="papers" data-rv-group>
+        <article class="paper" data-dims="D1 D2 D3 D4 D5 D6 D7">
+          <div class="paper-head">
+            <span class="who">Huang et al.</span><span class="yr">2025</span>
+            <span class="venue">ACM TOIS</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">Recommender AI Agent: integrating large language models for interactive recommendations</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Standalone LLMs suffer catalog hallucination (Hit@5 drops to 0.15) and high API latency in interactive RecSys.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>InteRecAgent framework — brain-and-tools, plan-first execution, candidate bus memory, dual-profile dict, RecLlama 7B.</dd></div>
+            <div><dt>Main findings</dt><dd>Plan-first cuts API calls to 2 per turn; candidate bus token bloat is O(1); RecLlama 7B reaches Hit@5 = 0.801 on Steam.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> cold-start items lacking logs score low. <strong>Inferred:</strong> profile-dict merging lacks automated conflict resolution.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D1</span><span class="dimtag">D2</span><span class="dimtag">D3</span><span class="dimtag">D4</span><span class="dimtag">D5</span><span class="dimtag">D6</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1145/3731446" target="_blank" rel="noopener noreferrer">DOI 10.1145/3731446</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D1 D2">
+          <div class="paper-head">
+            <span class="who">Saadati et al.</span><span class="yr">2025</span>
+            <span class="venue">Benchmark paper 6</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">RUNSRec: cross-domain review embeddings for user modeling</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>ID-based models fail cross-domain transfer because item-ID vocabularies are disjoint across platforms.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>RUNSRec — a textual review-embedding encoder replacing item IDs; zero-shot transfer evaluation across domains.</dd></div>
+            <div><dt>Main findings</dt><dd>Eliminates ID vocabulary constraints; achieves state-of-the-art cross-domain transfer without shared user IDs.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> high inference latency of PLM encoders. <strong>Inferred:</strong> relies heavily on high-quality textual reviews.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D1</span><span class="dimtag">D2</span></span>
+            <span class="nodoi">No DOI · benchmark entry</span>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D2 D7">
+          <div class="paper-head">
+            <span class="who">Saadati et al.</span><span class="yr">2025</span>
+            <span class="venue">Benchmark paper 9</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">DITTO: continual learning for user preference tracking under distribution shift</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Sequential recommenders suffer catastrophic forgetting under continuous distribution shifts.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>DITTO — a continual learning framework with forward knowledge transfer (FKT) and backward knowledge transfer (BKT).</dd></div>
+            <div><dt>Main findings</dt><dd>Sustains recommendation accuracy across streaming task shifts without re-training from scratch.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> evaluated primarily on top-K task sequences. <strong>Inferred:</strong> high memory overhead for replay buffers.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D2</span><span class="dimtag">D7</span></span>
+            <span class="nodoi">No DOI · benchmark entry</span>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D1 D2 D3 D4 D7">
+          <div class="paper-head">
+            <span class="who">Tan &amp; Jiang</span><span class="yr">2023</span>
+            <span class="venue">arXiv</span>
+            <span class="venue sur">Survey</span>
+          </div>
+          <p class="paper-title">User modeling in the era of large language models: current research and future directions</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>LLMs struggle with evolving interaction logs; there is no unified taxonomy for text/graph user modeling.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>Comprehensive survey; taxonomy of LLMs as profilers, enhancers, controllers, and evaluators.</dd></div>
+            <div><dt>Main findings</dt><dd>Establishes a systematic framework for LLM-driven user modeling; demonstrates RAG superiority over raw text.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> high LLM inference latency and prompt hallucination. <strong>Inferred:</strong> omits continuous neural graph integration.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D1</span><span class="dimtag">D2</span><span class="dimtag">D3</span><span class="dimtag">D4</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://arxiv.org/abs/2311.09218" target="_blank" rel="noopener noreferrer">arXiv 2311.09218</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D2 D3 D4 D7">
+          <div class="paper-head">
+            <span class="who">Meng et al.</span><span class="yr">2025</span>
+            <span class="venue">ACM RecSys ’25</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">Balancing fine-tuning and RAG: a hybrid strategy for dynamic LLM recommendation updates</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>High compute cost of continuous LLM fine-tuning versus context-window limits of RAG for dynamic updates.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>Hybrid strategy — periodic LoRA fine-tuning plus real-time RAG profile ingestion; e-commerce A/B tests (1B users).</dd></div>
+            <div><dt>Main findings</dt><dd>Statistically significant gains in user satisfaction in live A/B tests; 40% compute cost reduction.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> RAG retrieval latency spikes under massive catalogs. <strong>Inferred:</strong> fixed RAG window ignores macro-drift.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D2</span><span class="dimtag">D3</span><span class="dimtag">D4</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1145/3705328.3748105" target="_blank" rel="noopener noreferrer">DOI 10.1145/3705328.3748105</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D2 D4 D7">
+          <div class="paper-head">
+            <span class="who">Xie et al.</span><span class="yr">2022</span>
+            <span class="venue">IEEE ICDE</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">CL4SRec: contrastive learning for sequential recommendation</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Data sparsity limits transformer sequential recommenders (SASRec) under next-item prediction.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>CL4SRec — SASRec plus item crop, mask and reorder contrastive augmentations; Beauty, Sports, Yelp, ML-1M.</dd></div>
+            <div><dt>Main findings</dt><dd>Improves relative ranking metrics (NDCG@10) by 7.37%–11.02% over SASRec baselines.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> context-free ID reliance; sensitive to augmentation rates. <strong>Inferred:</strong> omits textual/semantic profiles.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D2</span><span class="dimtag">D4</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1109/ICDE53745.2022.00032" target="_blank" rel="noopener noreferrer">DOI 10.1109/ICDE53745.2022.00032</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D2 D5 D7">
+          <div class="paper-head">
+            <span class="who">Al-Ghossein et al.</span><span class="yr">2022</span>
+            <span class="venue">ACM CSUR</span>
+            <span class="venue sur">Survey</span>
+          </div>
+          <p class="paper-title">A survey on stream-based recommender systems</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Batch-learning RecSys cannot update user profiles in real time under continuous streaming data.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>Systematic survey; SBRS four-module architecture (memory, learning, change detection, retrieval).</dd></div>
+            <div><dt>Main findings</dt><dd>Categorizes concept-drift detection and sliding-window memory buffers for stream updating.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> memory decay requires pre-set drift assumptions. <strong>Inferred:</strong> lacks multi-modal text-profile integration.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D2</span><span class="dimtag">D5</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1145/3453166" target="_blank" rel="noopener noreferrer">DOI 10.1145/3453166</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D1 D3 D5 D7">
+          <div class="paper-head">
+            <span class="who">Yang et al.</span><span class="yr">2024</span>
+            <span class="venue">ACM KDD ’24</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">CRRS: revisiting reciprocal recommender systems — metrics, formulation, and method</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Unilateral RecSys ignores bilateral mutual satisfaction in two-sided matching (recruitment, dating).</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>CRRS causal framework — potential-outcome modeling, vacant-slots mechanism; KDD ’24 datasets.</dd></div>
+            <div><dt>Main findings</dt><dd>Improves bilateral satisfaction (CRecall, RNDCG) by 12.4% over unilateral baseline models.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> high interaction sparsity limits counterfactual estimation. <strong>Inferred:</strong> assumes static user attributes.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D1</span><span class="dimtag">D3</span><span class="dimtag">D5</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1145/3637528.3671912" target="_blank" rel="noopener noreferrer">DOI 10.1145/3637528.3671912</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D2 D4 D6 D7">
+          <div class="paper-head">
+            <span class="who">Zhang et al.</span><span class="yr">2022</span>
+            <span class="venue">IEEE TNNLS</span>
+            <span class="venue sur" style="border-color:#A8B6C0;color:#3F5768;background:#EDF1F3">Research</span>
+          </div>
+          <p class="paper-title">TARN: neural time-aware sequential recommendation by jointly modeling preference dynamics and explicit feature couplings</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Sequential models fail to model feature interactions jointly with temporal behavior dynamics.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>TARN — feature interaction network (FIN) plus temporal convolutional network (TCN); IEEE TNNLS.</dd></div>
+            <div><dt>Main findings</dt><dd>Outperforms static and sequential baselines by 8.5% NDCG@10 by coupling feature–time dynamics.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> increased parameter complexity. <strong>Inferred:</strong> lacks LLM natural-language intent reasoning.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D2</span><span class="dimtag">D4</span><span class="dimtag">D6</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1109/TNNLS.2021.3072998" target="_blank" rel="noopener noreferrer">DOI 10.1109/TNNLS.2021.3072998</a>
+          </div>
+        </article>
+
+        <article class="paper" data-dims="D1 D2 D3 D7">
+          <div class="paper-head">
+            <span class="who">Freitas et al.</span><span class="yr">2026</span>
+            <span class="venue">SAGE Open</span>
+            <span class="venue sur">Narrative review</span>
+          </div>
+          <p class="paper-title">User profiling and its dynamics: a narrative review</p>
+          <dl>
+            <div><dt>Problem &amp; objectives</dt><dd>Fragmented conceptualization of user-profiling dynamics across personalized adaptive software.</dd></div>
+            <div><dt>Methodology &amp; datasets</dt><dd>Narrative literature review; categorization across five dynamic software profiling dimensions.</dd></div>
+            <div><dt>Main findings</dt><dd>Provides systematic classification of profile dynamics, explicit versus implicit collection, and adaptive updating.</dd></div>
+            <div><dt>Limitations</dt><dd><strong>Explicit:</strong> non-quantitative review scope. <strong>Inferred:</strong> lacks algorithmic implementation blueprints.</dd></div>
+          </dl>
+          <div class="paper-foot">
+            <span class="dim-tags"><span class="dimtag">D1</span><span class="dimtag">D2</span><span class="dimtag">D3</span><span class="dimtag">D7</span></span>
+            <a class="doi" href="https://doi.org/10.1177/30504554251407092" target="_blank" rel="noopener noreferrer">DOI 10.1177/30504554251407092</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="tbl" style="margin:34px 0 0">
+        <p class="cap-line">
+          <span class="cap-id">Table 6</span>Comparative evidence matrix — ten benchmark studies, six extraction fields each.
+          <span class="fa" lang="fa" dir="rtl">جدول ۶ — ماتریس شواهد مقایسه‌ای: ده مطالعهٔ معیار و شش فیلد استخراج.</span>
+        </p>
+      </div>
+
+      <h3 class="subhead" data-reveal>5.3 · Dimension coverage</h3>
+      <div class="prose">
+        <p>Table 7 turns the 7D mapping column into a coverage map. The distribution is uneven by a factor of more than four: D2 (history) and D7 (drift) are modelled by nine of the ten studies, while D6 (environment) appears in two and D5 (constraints) in three. The median study covers four dimensions. Only one study — InteRecAgent — spans all seven, and it does so through separate components rather than a single joint objective, which is precisely the boundary that gap G1 in §7 names.</p>
+      </div>
+
+      <div class="cov-head">
+        <h3>Dimension coverage map</h3>
+        <p>Derived from the 7D mapping of Table 6. Pick a dimension to filter the evidence cards above; press <span class="mono-s">Esc</span> to clear.</p>
+      </div>
+      <p class="cov-legend">
+        <span><span class="sw"></span>dimension modelled by the study</span>
+        <span><span class="sw empty"></span>not modelled</span>
+        <span>·</span>
+        <span>counts are derived from Table 6, not quoted from it</span>
+      </p>
+      <div class="cov-scroll">
+        <table class="cov">
+          <caption class="visually-hidden">Studies by representational dimension</caption>
+          <thead>
+            <tr>
+              <th class="paper-col" scope="col">Benchmark study</th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D1" aria-pressed="false" title="Filter by D1 — stable personal attributes">D1</button></th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D2" aria-pressed="false" title="Filter by D2 — historical behavior trajectories">D2</button></th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D3" aria-pressed="false" title="Filter by D3 — explicit goals and preferences">D3</button></th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D4" aria-pressed="false" title="Filter by D4 — current intentions">D4</button></th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D5" aria-pressed="false" title="Filter by D5 — constraints and hard limits">D5</button></th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D6" aria-pressed="false" title="Filter by D6 — context and environment">D6</button></th>
+              <th class="dim-col" scope="col"><button type="button" data-filter-dim="D7" aria-pressed="false" title="Filter by D7 — temporal dynamics and drift">D7</button></th>
+            </tr>
+          </thead>
+          <tbody data-rv-group>
+            <tr><td class="paper-col">InteRecAgent <span class="venue-mini">Huang 2025 · TOIS</span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">RUNSRec <span class="venue-mini">Saadati 2025</span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td></tr>
+            <tr><td class="paper-col">DITTO <span class="venue-mini">Saadati 2025</span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">Tan &amp; Jiang <span class="venue-mini">2023 · arXiv</span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">Meng et al. <span class="venue-mini">2025 · RecSys</span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">CL4SRec <span class="venue-mini">Xie 2022 · ICDE</span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">SBRS survey <span class="venue-mini">Al-Ghossein 2022 · CSUR</span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">CRRS <span class="venue-mini">Yang 2024 · KDD</span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">TARN <span class="venue-mini">Zhang 2022 · TNNLS</span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td></tr>
+            <tr><td class="paper-col">Profiling dynamics <span class="venue-mini">Freitas 2026 · SAGE</span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk off"></span></td><td><span class="mk"></span></td></tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="paper-col">Studies covering the dimension</td>
+              <td>5</td><td>9</td><td>5</td><td>5</td><td>3</td><td>2</td><td>9</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="filter-status" id="filter-status-2" role="status" aria-live="polite"></p>
+
+      <figure class="tbl" data-reveal style="margin-top:26px">
+        <figcaption style="border-top:0;padding-top:0">
+          <span class="cap-id">Table 7</span>Dimension coverage across the corpus, derived from Table 6. D2 and D7 dominate; D5 and D6 are the thinnest dimensions.
+          <span class="fa" lang="fa" dir="rtl">جدول ۷ — پوشش ابعاد در پیکره، استخراج‌شده از جدول ۶.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ── 06 · synthesis ─────────────────────────────────── -->
+    <section class="sec" id="synthesis" aria-labelledby="h-synthesis">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">06</span><span>/ 11</span></p>
+        <h2 id="h-synthesis">Thematic synthesis</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">ترکیب موضوعی</p>
+      </header>
+
+      <div class="prose">
+        <h3 class="gap-title" style="margin:0 0 12px">6.1 · Micro-temporal intent &amp; sequential behavior trajectories</h3>
+        <p class="fa" lang="fa" dir="rtl" style="margin:-4px 0 14px;color:var(--muted);font-size:13.5px">۶.۱ — نیت خردزمانی و مسیرهای رفتار دنباله‌ای</p>
+        <p>The evolution of modern recommender systems has been fundamentally shaped by the transition from static collaborative filtering to micro-temporal sequential behavior modeling. Early neural sequential models captured order dependencies but struggled under severe interaction data sparsity. To overcome this, Xie et al. (2022) introduced CL4SRec, establishing a self-supervised contrastive learning framework that applies data augmentation operators — specifically Item Crop, Item Mask, and Item Reorder — to historical behavior trajectories (D2). By maximizing mutual information between correlated sequence views, CL4SRec demonstrated that neural sequential representations can extract resilient intent vectors (D4) even under sparse log conditions, achieving relative NDCG gains of up to 11.02% across benchmark datasets.</p>
+        <p>However, pure sequence-based contrastive learning often treats interaction timestamps as ordinal indices rather than continuous temporal signals. Addressing this limitation, Zhang et al. (2022) proposed TARN, which couples explicit feature interaction networks (FIN) with temporal convolutional networks (TCN) to capture fine-grained time-decay functions (D7) alongside contextual environmental conditions (D6). Similarly, Al-Ghossein et al. (2022) synthesized stream-based recommendation architectures (SBRS), demonstrating that real-time user modeling requires explicit concept-drift detection modules to balance historical memory retainment against stale preference purging. Together, these studies confirm that tracking micro-temporal behavior trajectories requires unifying continuous temporal convolution with adaptive memory management.</p>
+
+        <h3 class="gap-title" style="margin:38px 0 12px">6.2 · LLM-driven user profiling, agent planning &amp; tool augmentation</h3>
+        <p class="fa" lang="fa" dir="rtl" style="margin:-4px 0 14px;color:var(--muted);font-size:13.5px">۶.۲ — پروفایل‌سازی کاربر با LLM، برنامه‌ریزی عاملی و افزونهٔ ابزار</p>
+        <p>While sequential neural models excel at pattern recognition over closed item-ID spaces, they are inherently incapable of parsing natural-language constraints (D5) or reasoning over multi-step user goals (D3). As systematically categorized by Tan &amp; Jiang (2023), Large Language Models (LLMs) redefine user modeling by operating across four functional paradigms: Profilers, Enhancers, Controllers, and Evaluators. Despite their linguistic fluidity, standalone LLMs suffer severe catalog hallucination — with Hit@5 dropping to 0.15 on proprietary e-commerce catalogs — due to parametric memory boundaries.</p>
+        <p>To bridge this architectural gap, Huang et al. (2025) formulated InteRecAgent, pioneering the “brain-and-tools” paradigm. InteRecAgent decouples natural-language intent reasoning from item candidate ranking. By introducing plan-first execution, the LLM controller generates structured tool chains upfront, reducing API latency from N+1 steps to exactly 2 calls per turn. Furthermore, candidate memory bus streaming achieves O(1) prompt token overhead, while dual-profile memory dictionaries maintain persistent long-term taste arrays ({history, like, dislike}). Complementing this, Meng et al. (2025) demonstrated in a billion-user commercial deployment that balancing periodic LoRA fine-tuning with low-cost RAG context ingestion achieves optimal trade-offs between compute latency and dynamic interest adaptation. In cross-domain scenarios where item IDs fail completely, Saadati et al. (2025) showed in RUNSRec that fine-tuned language models encoding textual review embeddings enable seamless zero-shot preference transfer without requiring shared user identifiers.</p>
+
+        <h3 class="gap-title" style="margin:38px 0 12px">6.3 · Bilateral matching, continual adaptation &amp; lifelong profile dynamics</h3>
+        <p class="fa" lang="fa" dir="rtl" style="margin:-4px 0 14px;color:var(--muted);font-size:13.5px">۶.۳ — تطبیق دوسویه، انطباق پیوسته و پویایی پروفایل مادام‌العمر</p>
+        <p>A pervasive blind spot in traditional recommender literature is the assumption of unilateral utility optimization, where systems focus solely on user engagement while ignoring platform or supply-side constraints. Yang et al. (2024) addressed this in CRRS by introducing a causal potential-outcome framework for reciprocal recommendation systems (IM). CRRS models bilateral satisfaction across two-sided matching markets (such as online recruitment and dating), introducing a vacant-slots mechanism to optimize mutual match stability under capacity limits (D5).</p>
+        <p>Concurrently, maintaining profile fidelity over extended lifelong deployment requires continuous adaptation without catastrophic forgetting. Saadati et al. (2025) addressed distribution shifts in DITTO by introducing forward knowledge transfer (FKT) and backward knowledge transfer (BKT) modules, enabling continual preference tracking across evolving task sequences. Finally, Freitas et al. (2026) provided a narrative synthesis of dynamic user-profiling software, emphasizing that future adaptive intelligent systems must unify explicit user feedback, implicit telemetry, and dynamic belief revision to maintain long-term alignment with evolving human goals.</p>
+        <p>Read together, the three strands describe one trade-off rather than three independent problems. Each strand expands a different dimension at the cost of another: sequence models gain D2/D7 but assume the item space is static; LLM agents gain D3/D4/D5 but pay in latency and hallucination; bilateral and continual work gains D5 and long-horizon stability but assumes attributes are fixed (CRRS) or task boundaries are known (DITTO). No study in the corpus pays all three costs simultaneously, which is the empirical basis for the first gap in §7.</p>
+      </div>
+    </section>
+
+    <!-- ── 07 · gaps ──────────────────────────────────────── -->
+    <section class="sec" id="gaps" aria-labelledby="h-gaps">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">07</span><span>/ 11</span></p>
+        <h2 id="h-gaps">Research gaps and roadmap</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">شکاف‌های پژوهشی و نقشهٔ راه</p>
+      </header>
+
+      <div class="prose">
+        <p>By conducting a rigorous cross-study synthesis of the ten benchmark studies, the group identified six structural research gaps, categorised into tiers A through C by urgency and theoretical impact. Table 8 gives, for each gap, the coverage that exists, the boundary that is not investigated, the bibliographic evidence, and one testable research question.</p>
+      </div>
+
+      <div class="gaps" data-rv-group>
+        <article class="gap">
+          <div class="gap-head">
+            <span class="gap-id">G1</span>
+            <h3 class="gap-title">Unified 7D representation</h3>
+            <span class="tier a">Tier A · critical</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-field"><span class="k">Previous research coverage</span><p>Existing systems isolate 1–3 dimensions (e.g. D2/D4 in CL4SRec, D3/D5 in InteRecAgent).</p></div>
+            <div class="gap-field"><span class="k">Insufficiently investigated boundary</span><p>Jointly optimizing all 7 representational state dimensions within a single unified architecture.</p></div>
+            <div class="gap-field"><span class="k">Bibliographic evidence</span><p class="ev">All 10 benchmark studies (Huang 2025 · Tan 2023 · Saadati 2025)</p></div>
+            <div class="gap-field"><span class="k">Context</span><p>The one study mapped to all seven dimensions, InteRecAgent, does so with separate components rather than a single joint objective — which is exactly the boundary this gap names.</p></div>
+            <div class="gap-field question"><span class="k">Proposed research question</span><p>How can a single hybrid transformer architecture model explicit goals, temporal drift, and bilateral constraints simultaneously?</p></div>
+          </div>
+        </article>
+
+        <article class="gap">
+          <div class="gap-head">
+            <span class="gap-id">G2</span>
+            <h3 class="gap-title">Streaming cold-start memory</h3>
+            <span class="tier a">Tier A · critical</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-field"><span class="k">Previous research coverage</span><p>InteRecAgent and CL4SRec rely on historical behavioral logs for candidate scoring.</p></div>
+            <div class="gap-field"><span class="k">Insufficiently investigated boundary</span><p>Scoring new cold-start items lacking behavioral logs within streaming candidate buses.</p></div>
+            <div class="gap-field"><span class="k">Bibliographic evidence</span><p class="ev">Huang et al. (2025, App. C.3) · Saadati et al. (2025, RUNSRec)</p></div>
+            <div class="gap-field"><span class="k">Context</span><p>Both cited systems assume a log-rich item before it can enter the candidate set, so an unlogged item has no path into the ranking stage.</p></div>
+            <div class="gap-field question"><span class="k">Proposed research question</span><p>How can textual metadata embeddings stream within candidate memory buses without API latency penalties?</p></div>
+          </div>
+        </article>
+
+        <article class="gap">
+          <div class="gap-head">
+            <span class="gap-id">G3</span>
+            <h3 class="gap-title">Continuous item catalog expansion</h3>
+            <span class="tier b">Tier B · high</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-field"><span class="k">Previous research coverage</span><p>DITTO models continual learning over fixed task sequences.</p></div>
+            <div class="gap-field"><span class="k">Insufficiently investigated boundary</span><p>Scaling FKT/BKT continual transfer to dynamically expanding e-commerce catalogs.</p></div>
+            <div class="gap-field"><span class="k">Bibliographic evidence</span><p class="ev">Saadati et al. (2025, DITTO) · Al-Ghossein et al. (2022)</p></div>
+            <div class="gap-field"><span class="k">Context</span><p>Task sequences are assumed stable; catalog growth changes the label space itself, which the transfer modules do not model.</p></div>
+            <div class="gap-field question"><span class="k">Proposed research question</span><p>Can continual learning algorithms prevent catastrophic forgetting when item catalog vocabularies double daily?</p></div>
+          </div>
+        </article>
+
+        <article class="gap">
+          <div class="gap-head">
+            <span class="gap-id">G4</span>
+            <h3 class="gap-title">Bilateral multi-stakeholder governance</h3>
+            <span class="tier b">Tier B · high</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-field"><span class="k">Previous research coverage</span><p>CRRS models bilateral reciprocal utility in two-sided matching.</p></div>
+            <div class="gap-field"><span class="k">Insufficiently investigated boundary</span><p>Harmonizing individual user curiosity with organizational compliance and fairness rules.</p></div>
+            <div class="gap-field"><span class="k">Bibliographic evidence</span><p class="ev">Yang et al. (2024) · Freitas et al. (2026)</p></div>
+            <div class="gap-field"><span class="k">Context</span><p>Reciprocity is optimized pairwise; governance rules act on the platform as a whole, so the two objectives are never solved in the same objective function.</p></div>
+            <div class="gap-field question"><span class="k">Proposed research question</span><p>How to balance real-time user intent satisfaction against multi-stakeholder governance constraints?</p></div>
+          </div>
+        </article>
+
+        <article class="gap">
+          <div class="gap-head">
+            <span class="gap-id">G5</span>
+            <h3 class="gap-title">Differentiable prompt–neural spaces</h3>
+            <span class="tier c">Tier C · medium</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-field"><span class="k">Previous research coverage</span><p>InteRecAgent and Meng et al. pass discrete JSON profile strings to PyTorch rankers.</p></div>
+            <div class="gap-field"><span class="k">Insufficiently investigated boundary</span><p>Formulating continuous hybrid neural–symbolic embedding spaces for joint gradient flow.</p></div>
+            <div class="gap-field"><span class="k">Bibliographic evidence</span><p class="ev">Tan &amp; Jiang (2023) · Huang et al. (2025)</p></div>
+            <div class="gap-field"><span class="k">Context</span><p>The hand-off between the language layer and the ranking layer is a serialization boundary: gradients stop there, so the two halves cannot be trained jointly.</p></div>
+            <div class="gap-field question"><span class="k">Proposed research question</span><p>Can gradient backpropagation flow directly from neural rankers (SASRec) into LLM soft-prompt adapters?</p></div>
+          </div>
+        </article>
+
+        <article class="gap">
+          <div class="gap-head">
+            <span class="gap-id">G6</span>
+            <h3 class="gap-title">Belief revision for temporary context</h3>
+            <span class="tier c">Tier C · medium</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-field"><span class="k">Previous research coverage</span><p>Dual-profile memory appends dictionary keys ({like, dislike}) linearly.</p></div>
+            <div class="gap-field"><span class="k">Insufficiently investigated boundary</span><p>Distinguishing temporary situational constraints (e.g. gift buying) from permanent taste shifts.</p></div>
+            <div class="gap-field"><span class="k">Bibliographic evidence</span><p class="ev">Freitas et al. (2026) · Meng et al. (2025)</p></div>
+            <div class="gap-field"><span class="k">Context</span><p>Appending to a profile is monotonic; a temporary need written into it never fully leaves, and the long-term profile absorbs the noise.</p></div>
+            <div class="gap-field question"><span class="k">Proposed research question</span><p>What belief-revision algorithms can prevent temporary context queries from corrupting long-term user profiles?</p></div>
+          </div>
+        </article>
+      </div>
+
+      <figure class="tbl" data-reveal style="margin-top:26px">
+        <figcaption style="border-top:0;padding-top:0">
+          <span class="cap-id">Table 8</span>Research gap taxonomy — six gaps with tier badges, bibliographic evidence, and proposed research questions.
+          <span class="fa" lang="fa" dir="rtl">جدول ۸ — طبقه‌بندی شکاف‌های پژوهشی با نشان سطح اولویت و پرسش‌های پیشنهادی.</span>
+        </figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>The tiers imply an order of work rather than a ranking of difficulty. Tier A gaps are prerequisites: a joint seven-dimensional objective (G1) and a way to score unlogged items (G2) must exist before catalog-scale continual learning (G3) or governance-aware matching (G4) can be evaluated at all. Tier C gaps are enabling techniques that improve an architecture once it exists — differentiable prompt–neural spaces (G5) and belief revision (G6) — and each has a concrete, testable formulation rather than a general call for “more research”.</p>
+      </div>
+    </section>
+
+    <!-- ── 08 · validity ──────────────────────────────────── -->
+    <section class="sec" id="validity" aria-labelledby="h-validity">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">08</span><span>/ 11</span></p>
+        <h2 id="h-validity">Threats to validity and limitations</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">تهدیدهای اعتبار و محدودیت‌ها</p>
+      </header>
+
+      <h3 class="subhead" data-reveal>8.1 · Construct validity</h3>
+      <div class="prose"><p>The 7D framework is an interpretive instrument, not a measurement scale. Two coders could map the same study to different dimensions where a paper uses a mechanism for a purpose the authors do not name. Mitigation was procedural: each paper was extracted by one assigned member against the field definitions in §4.2, then audited by the group; disagreement was resolved by re-reading the method section, not by voting. The residual risk is that a dimension is credited because a mechanism <em>could</em> serve it.</p></div>
+
+      <h3 class="subhead" data-reveal>8.2 · Internal validity</h3>
+      <div class="prose"><p>The corpus mixes evaluations that are not commensurable: NDCG on public benchmarks, bilateral recall in simulated markets, Hit@5 in a deployment, and compute-cost reductions. No effect size is pooled, and the synthesis compares representational choices, not performance. Claims such as “CL4SRec improves NDCG@10 by 7.37%–11.02%” are reported as the studies state them, against their own baselines.</p></div>
+
+      <h3 class="subhead" data-reveal>8.3 · External validity</h3>
+      <div class="prose"><p>The corpus is weighted toward recommender systems and e-commerce, and two of the ten studies are industry deployments. Results transfer least well to domains where the item space is small and constraints are legal rather than commercial, such as public-service matching or clinical triage. The 2021–2026 window further excludes the pre-transformer period that founded much of the vocabulary used here.</p></div>
+
+      <h3 class="subhead" data-reveal>8.4 · Conclusion validity</h3>
+      <div class="prose"><p>Tier assignments (A/B/C) are a team judgement about urgency and dependency, not a statistical result. A different weighting — for example treating governance as an immediate constraint rather than a Tier B concern — would reorder the roadmap while leaving the taxonomy intact.</p></div>
+
+      <h3 class="subhead" data-reveal>8.5 · Review-level limitations</h3>
+      <div class="prose"><p>Four limitations belong to this review rather than to the corpus. The protocol was not registered; the corpus is purposive, being the assignment's benchmark set, so it cannot support a claim about the proportion of the literature containing a given approach; per-database screening counts were not archived, so Figure 1 reports stages rather than record counts; and single-coder extraction means the extraction has not been independently replicated. A full PRISMA flow diagram with counts would require re-running the searches with a logged protocol, which is the first item on the roadmap that concerns this review itself.</p></div>
+    </section>
+
+    <!-- ── 09 · conclusion ────────────────────────────────── -->
+    <section class="sec" id="conclusion" aria-labelledby="h-conclusion">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">09</span><span>/ 11</span></p>
+        <h2 id="h-conclusion">Conclusion and future work</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">نتیجه‌گیری و کارهای آینده</p>
+      </header>
+
+      <div class="prose">
+        <p>This review compared ten benchmark studies through a seven-dimensional account of what it means for a system to represent a changing person. Three findings are stable across the corpus. Sequential and temporal models (CL4SRec, TARN, SBRS) are mature in the two dimensions they target — history (D2) and drift (D7) — and are represented by nine of ten studies. LLM-based agents (InteRecAgent, Meng et al., Tan &amp; Jiang) extend coverage into stated goals and constraints (D3–D5) but introduce latency and hallucination as first-order costs. Bilateral and lifelong work (CRRS, DITTO) addresses the two hardest structural problems — mutual satisfaction and continual adaptation — while explicitly assuming away parts of the user model it depends on.</p>
+        <p>The coverage map makes the imbalance concrete: the median study covers four of seven dimensions, and the two thinnest dimensions (D5 constraints, D6 environment) are also the two that decide whether a recommendation is <em>permissible</em> rather than merely relevant. The gap taxonomy converts that observation into six testable questions, ordered so that the two Tier A prerequisites come first.</p>
+        <p>Three directions follow directly. First, a single architecture that optimises the seven dimensions jointly, rather than chaining specialised components, is the precondition for the rest. Second, streaming cold-start scoring — admitting an item into the candidate set before it has behavioural evidence — is a concrete design problem with a measurable target. Third, making the language layer differentiable with respect to the ranking layer would remove the serialisation boundary that currently prevents joint training. Each is stated as a research question in Table 8 rather than as a recommendation, because none of the three can be settled with the current evidence.</p>
+      </div>
+    </section>
+
+    <!-- ── 10 · declarations ──────────────────────────────── -->
+    <section class="sec" id="declarations" aria-labelledby="h-declarations">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">10</span><span>/ 11</span></p>
+        <h2 id="h-declarations">Declarations</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">اعلامیه‌ها</p>
+      </header>
+
+      <h3 class="subhead" data-reveal>10.1 · Authors and contributions</h3>
+      <div class="prose">
+        <p>Thirteen contributors produced this review. Table 9 records each contributor's role, focus, paper-level assignment, and audit status. Eleven members hold a benchmark-paper assignment; two members have no paper-level assignment recorded and contributed to cross-cutting work.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Author contributions and paper assignments</caption>
+            <thead>
+              <tr>
+                <th scope="col">Contributor</th>
+                <th scope="col">Role</th>
+                <th scope="col">Focus domain</th>
+                <th scope="col">Benchmark paper(s)</th>
+                <th scope="col">Audit status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Contributor">Amin Saadati</td><td data-label="Role"><span class="tag">Leader</span></td><td data-label="Focus">Goal / constraint-aware RecSys &amp; cross-domain transfer</td><td data-label="Paper">RUNSRec; DITTO</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Mobina Mousavi</td><td data-label="Role"><span class="tag">Co-leader</span></td><td data-label="Focus">Dynamic profiling &amp; hybrid fine-tuning / RAG</td><td data-label="Paper">Freitas et al. (2026)</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Mohammadreza Portershizi</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">LLM-based user modeling &amp; sequential contrastive learning</td><td data-label="Paper">Tan &amp; Jiang (2023); CL4SRec</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Amirhossein Sadeghi</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">Dynamic LLM updates &amp; user interest drift</td><td data-label="Paper">Meng et al. (2025)</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Fatemeh Ashrafzadeh</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">Recommender AI agents &amp; tool integration</td><td data-label="Paper">InteRecAgent</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Narjes Dargahi</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">Stream-based RecSys &amp; concept drift</td><td data-label="Paper">Al-Ghossein et al. (2022)</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Rojin Taghizadeh</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">Reciprocal &amp; two-sided matching systems</td><td data-label="Paper">CRRS</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Mehdi Allahdoost</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">Behavior sequences &amp; neural time-aware RS</td><td data-label="Paper">TARN</td><td data-label="Status">Verified</td></tr>
+              <tr><td data-label="Contributor">Arefeh Afsarei</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">—</td><td data-label="Paper">No paper-level assignment recorded</td><td data-label="Status">Cross-cutting</td></tr>
+              <tr><td data-label="Contributor">Saba Salmanizadeh</td><td data-label="Role"><span class="tag">Member</span></td><td data-label="Focus">—</td><td data-label="Paper">No paper-level assignment recorded</td><td data-label="Status">Cross-cutting</td></tr>
+              <tr><td data-label="Contributor">Reza Poostindozi</td><td data-label="Role"><span class="tag">New member</span></td><td data-label="Focus">Intelligent systems integration &amp; analysis</td><td data-label="Paper">Analysis &amp; review (no individual paper)</td><td data-label="Status">Newly added</td></tr>
+              <tr><td data-label="Contributor">Zahra Adabi</td><td data-label="Role"><span class="tag">New member</span></td><td data-label="Focus">User interface &amp; behavioral telemetry</td><td data-label="Paper">Analysis &amp; review (no individual paper)</td><td data-label="Status">Newly added</td></tr>
+              <tr><td data-label="Contributor">Hanieh Fadaei</td><td data-label="Role"><span class="tag">New member</span></td><td data-label="Focus">Contextual constraints &amp; system design</td><td data-label="Paper">Analysis &amp; review (no individual paper)</td><td data-label="Status">Newly added</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 9</span>Contributors, roles, focus domains, paper assignments, and audit status.
+          <span class="fa" lang="fa" dir="rtl">جدول ۹ — اعضا، نقش‌ها، دامنه‌های تمرکز، تخصیص مقالات و وضعیت ممیزی.</span>
+        </figcaption>
+      </figure>
+
+      <h3 class="subhead" data-reveal>10.2 · Funding, interests, and availability</h3>
+      <div class="decl" data-rv-group>
+        <div class="decl-item"><span class="k">Funding</span><p>None. This review was produced for the Advanced Research Assignment course and received no external funding.</p></div>
+        <div class="decl-item"><span class="k">Competing interests</span><p>Two of the ten included studies (RUNSRec, DITTO) are the group's own benchmark entries and are authored by the group leader. They were extracted by the assigned member and audited by the group, but an independent reviewer would be entitled to discount their weight; this is stated here rather than omitted.</p></div>
+        <div class="decl-item"><span class="k">Data availability</span><p>The extracted matrix, the 7D mapping, and the search strings are reported in full in this article. The original 15-page PDF deliverable and this web edition are the archived artefacts; the screening log was not retained in machine-readable form (§8.5).</p></div>
+        <div class="decl-item"><span class="k">Reporting standard</span><p>Structured systematic literature review, reported against a PRISMA 2020-informed checklist; conformance and deviations are itemised in Appendix A.</p></div>
+        <div class="decl-item"><span class="k">Registration</span><p>Not registered. The protocol was fixed before extraction and is reported in §2–§3; no registry entry exists.</p></div>
+        <div class="decl-item"><span class="k">Version</span><p>Web edition v3 · 2026. Supersedes the 15-page PDF (v2); the corrections made in this edition are listed in §10.3.</p></div>
+      </div>
+
+      <h3 class="subhead" data-reveal>10.3 · Corrections to the previous edition</h3>
+      <div class="was">
+        <span class="h">Version note</span>
+        <p>This edition standardises reporting and corrects three inconsistencies in the v2 PDF: (i) the corpus balance is <b>7 empirical + 3 reviews</b>, not “6 research + 4 surveys” — the labels in the extraction matrix are the authority; (ii) the roster contains <b>13 contributors</b> while <b>11</b> hold a paper-level assignment, so the member table and Figure 3 are now consistent with that split; and (iii) <b>one study (InteRecAgent) maps to all seven dimensions</b>, so the earlier claim that no single paper addresses all seven was removed and the coverage claim now rests on Table 7.</p>
+      </div>
+    </section>
+
+    <!-- ── 11 · references ────────────────────────────────── -->
+    <section class="sec" id="references" aria-labelledby="h-references">
+      <header class="sec-head" data-reveal>
+        <p class="eyebrow"><span class="num">11</span><span>/ 11</span></p>
+        <h2 id="h-references">References</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">مراجع</p>
+      </header>
+
+      <p class="note" style="margin:0 0 4px">APA 7th edition. The ten studies marked with an identifier in Table 6 are the review corpus; the remaining two are cited in §1 and §6 for context.</p>
+
+      <ol class="refs" data-rv-group>
+        <li>Al-Ghossein, M., Abdessalem, T., &amp; Barré, A. (2022). A survey on stream-based recommender systems. <i>ACM Computing Surveys, 54</i>(5), Article 105, 1–36. <a class="doi-link" href="https://doi.org/10.1145/3453166" target="_blank" rel="noopener noreferrer">doi:10.1145/3453166</a></li>
+        <li>Alabduljabbar, R., Alshareef, M., &amp; Alshareef, N. (2023). Time-aware recommender systems: A comprehensive survey and quantitative assessment of literature. <i>IEEE Access, 11</i>, 32635–32650. <a class="doi-link" href="https://doi.org/10.1109/ACCESS.2023.3263503" target="_blank" rel="noopener noreferrer">doi:10.1109/ACCESS.2023.3263503</a></li>
+        <li>Freitas, D. N., Varela, K., &amp; Fermé, E. (2026). User profiling and its dynamics: A narrative review. <i>SAGE Open, 16</i>(1), 1–18. <a class="doi-link" href="https://doi.org/10.1177/30504554251407092" target="_blank" rel="noopener noreferrer">doi:10.1177/30504554251407092</a></li>
+        <li>Huang, X., Lian, J., Lei, Y., Yao, J., Lian, D., &amp; Xie, X. (2025). Recommender AI agent: Integrating large language models for interactive recommendations. <i>ACM Transactions on Information Systems, 43</i>(4), Article 96, 1–33. <a class="doi-link" href="https://doi.org/10.1145/3731446" target="_blank" rel="noopener noreferrer">doi:10.1145/3731446</a></li>
+        <li>Lin, Y., Chen, L., Ali, A., Nugent, C., Cleland, I., Li, R., Ding, J., &amp; Ning, H. (2024). Human digital twin: A survey. <i>Journal of Cloud Computing, 13</i>(1), Article 131. <a class="doi-link" href="https://doi.org/10.1186/s13677-024-00691-z" target="_blank" rel="noopener noreferrer">doi:10.1186/s13677-024-00691-z</a></li>
+        <li>Meng, C., Ling, H., Wang, J., Liu, Y., Zhang, S., Hong, D., Gao, M., Dalal, O., Chi, E., Hong, L., Lu, H., &amp; Han, N. (2025). Balancing fine-tuning and RAG: A hybrid strategy for dynamic LLM recommendation updates. In <i>Proceedings of the 19th ACM Conference on Recommender Systems (RecSys ’25)</i>, Industry Track. <a class="doi-link" href="https://doi.org/10.1145/3705328.3748105" target="_blank" rel="noopener noreferrer">doi:10.1145/3705328.3748105</a></li>
+        <li>Saadati, A., et al. (2025a). <i>RUNSRec: Cross-domain review embeddings for user modeling.</i> AI Literature Review Benchmark Papers.</li>
+        <li>Saadati, A., et al. (2025b). <i>DITTO: Continual learning for user preference tracking under distribution shift.</i> AI Literature Review Benchmark Papers.</li>
+        <li>Tan, Z., &amp; Jiang, M. (2023). User modeling in the era of large language models: Current research and future directions. <i>arXiv preprint arXiv:2311.09218</i>. <a class="doi-link" href="https://arxiv.org/abs/2311.09218" target="_blank" rel="noopener noreferrer">arXiv:2311.09218</a></li>
+        <li>Xie, X., Sun, F., Liu, Z., Wu, S., Gao, J., Zhang, J., Bolin, D., &amp; Cui, B. (2022). Contrastive learning for sequential recommendation. In <i>IEEE 38th International Conference on Data Engineering (ICDE)</i> (pp. 1250–1263). <a class="doi-link" href="https://doi.org/10.1109/ICDE53745.2022.00032" target="_blank" rel="noopener noreferrer">doi:10.1109/ICDE53745.2022.00032</a></li>
+        <li>Yang, C., Dai, S., Hou, Y., Zhao, W. X., Xu, J., Song, Y., &amp; Zhu, H. (2024). Revisiting reciprocal recommender systems: Metrics, formulation, and method. In <i>Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’24)</i> (pp. 3845–3856). <a class="doi-link" href="https://doi.org/10.1145/3637528.3671912" target="_blank" rel="noopener noreferrer">doi:10.1145/3637528.3671912</a></li>
+        <li>Zhang, Q., Cao, L., Shi, C., &amp; Niu, Z. (2022). Neural time-aware sequential recommendation by jointly modeling preference dynamics and explicit feature couplings. <i>IEEE Transactions on Neural Networks and Learning Systems, 33</i>(10), 5125–5137. <a class="doi-link" href="https://doi.org/10.1109/TNNLS.2021.3072998" target="_blank" rel="noopener noreferrer">doi:10.1109/TNNLS.2021.3072998</a></li>
+      </ol>
+    </section>
+
+    <!-- ── appendix A ─────────────────────────────────────── -->
+    <section class="sec" id="appendix" aria-labelledby="h-appendix">
+      <div class="appx-head" data-reveal>
+        <span class="lab">Appendix A</span>
+        <h2 id="h-appendix">Reporting checklist</h2>
+        <p class="fa sub-fa" lang="fa" dir="rtl">چک‌لیست گزارش‌دهی</p>
+      </div>
+
+      <div class="prose">
+        <p>Conformance with PRISMA 2020 is reported item by item. Where an item is not applicable or not performed, that is stated rather than omitted, so that a reader can see exactly which parts of the standard this review meets and which it does not.</p>
+      </div>
+
+      <figure class="tbl" data-reveal>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">PRISMA 2020-informed reporting checklist</caption>
+            <thead><tr><th scope="col" style="width:46%">PRISMA 2020 item</th><th scope="col">Where addressed</th><th scope="col" style="width:150px">Status</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Item">Title; abstract</td><td data-label="Where">Title page; Abstract</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Rationale</td><td data-label="Where">§1</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Objectives; research questions</td><td data-label="Where">§2</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Eligibility criteria</td><td data-label="Where">§3.2, Table 2</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Information sources</td><td data-label="Where">§3.1</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Search strategy</td><td data-label="Where">§3.1, Table 1</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Selection process</td><td data-label="Where">§3.4, Figure 1</td><td data-label="Status">Partial — no record counts</td></tr>
+              <tr><td data-label="Item">Data extraction</td><td data-label="Where">§3.3, Table 3</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Study characteristics</td><td data-label="Where">§5.1, Table 5</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Risk of bias / appraisal</td><td data-label="Where">§3.3, §8.1</td><td data-label="Status">Observable attributes only</td></tr>
+              <tr><td data-label="Item">Effect measures</td><td data-label="Where">§3.5</td><td data-label="Status">Not applicable — no meta-analysis</td></tr>
+              <tr><td data-label="Item">Synthesis methods</td><td data-label="Where">§3.5, §6</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Results of synthesis</td><td data-label="Where">§6, §7</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Reporting bias</td><td data-label="Where">§8.5</td><td data-label="Status">Assessed qualitatively</td></tr>
+              <tr><td data-label="Item">Certainty of evidence</td><td data-label="Where">§8.4</td><td data-label="Status">Not assessed (no GRADE)</td></tr>
+              <tr><td data-label="Item">Limitations</td><td data-label="Where">§8</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Registration; protocol</td><td data-label="Where">§2, §10.2</td><td data-label="Status">Not registered</td></tr>
+              <tr><td data-label="Item">Funding; competing interests</td><td data-label="Where">§10.2</td><td data-label="Status">Reported</td></tr>
+              <tr><td data-label="Item">Availability of data and code</td><td data-label="Where">§10.2</td><td data-label="Status">Stated</td></tr>
+              <tr><td data-label="Item">PRISMA flow counts</td><td data-label="Where">§3.4, §8.5</td><td data-label="Status">Not archived</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <span class="cap-id">Table 10</span>PRISMA 2020-informed checklist: item, location, and status.
+          <span class="fa" lang="fa" dir="rtl">جدول ۱۰ — چک‌لیست گزارش‌دهی بر مبنای PRISMA 2020: بند، محل و وضعیت.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="foot-in">
+    <div>
+      <p class="f-title">Dynamic human representation in intelligent systems</p>
+      <p>Group 1 · Master deliverable — official 10-benchmark v3 · course: advanced research assignment · 2026.<br>
+      Web edition v3 · standardised reporting. Ten benchmark studies, seven representational state dimensions, six research gaps.</p>
+    </div>
+    <p class="f-meta">
+      Group 1<br>
+      13 contributors<br>
+      D1–D7 framework<br>
+      <a href="Group1_Literature_Review_Master_Official10_v2.pdf">Source PDF · 15 pages ↓</a><br>
+      <a href="#main">Back to top ↑</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var html = document.documentElement;
+  var motion = html.classList.contains('js') && !html.classList.contains('rm');
+
+  /* ── reveals: entrance on first view, once ─────────── */
+  if (motion) {
+    var pending = Array.prototype.slice.call(document.querySelectorAll('[data-reveal],[data-rv-group]'));
+    var timerId = 0;
+
+    pending.forEach(function (g) {
+      if (!g.hasAttribute('data-rv-group')) { return; }
+      Array.prototype.slice.call(g.children).forEach(function (k, i) {
+        k.classList.add('rv-child');
+        if (i < 14) { k.style.setProperty('--n', i); }
+      });
+    });
+    Array.prototype.slice.call(document.querySelectorAll('.chart .bars .track')).forEach(function (t, i) {
+      t.style.setProperty('--n', i);
+    });
+
+    var cleanup = function (el) {
+      window.setTimeout(function () {
+        Array.prototype.slice.call(el.children).forEach(function (k) {
+          k.classList.remove('rv-child');
+          k.style.removeProperty('--n');
+        });
+      }, 1400);
+    };
+
+    var reveal = function () {
+      if (!pending.length) {
+        if (timerId) { window.clearInterval(timerId); timerId = 0; }
+        return;
+      }
+      var vh = window.innerHeight || 900;
+      var i, el, r;
+      for (i = pending.length - 1; i >= 0; i--) {
+        el = pending[i];
+        r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92) {
+          el.classList.add('is-in');
+          pending.splice(i, 1);
+          if (el.hasAttribute('data-rv-group')) { cleanup(el); }
+        }
+      }
+      if (!pending.length && timerId) { window.clearInterval(timerId); timerId = 0; }
+    };
+
+    window.addEventListener('scroll', reveal, { passive: true });
+    window.addEventListener('resize', reveal, { passive: true });
+    window.addEventListener('load', reveal);
+    reveal();
+    timerId = window.setInterval(reveal, 300);
+  }
+
+  /* ── section index: scroll spy + mobile highlight ───────── */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var targets = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+
+  if ("IntersectionObserver" in window && targets.length) {
+    var visible = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { visible.add(e.target.id); } else { visible.delete(e.target.id); }
+      });
+      var first = null;
+      for (var i = 0; i < targets.length; i++) {
+        if (visible.has(targets[i].id)) { first = targets[i].id; break; }
+      }
+      links.forEach(function(a){
+        var on = first && a.getAttribute('href') === "#" + first;
+        if (on) { a.setAttribute('aria-current', 'true'); } else { a.removeAttribute('aria-current'); }
+      });
+    }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
+    targets.forEach(function(t){ io.observe(t); });
+  }
+
+  /* ── dimension filter ───────────────────────────────────── */
+  var papers = Array.prototype.slice.call(document.querySelectorAll('#papers .paper'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-filter-dim]'));
+  var status = document.getElementById('filter-status');
+  var status2 = document.getElementById('filter-status-2');
+  var active = null;
+
+  var DIM_NAMES = {
+    D1: "stable personal attributes",
+    D2: "historical behavior trajectories",
+    D3: "explicit goals & preferences",
+    D4: "current intentions & immediate needs",
+    D5: "constraints & hard limits",
+    D6: "contextual & environmental conditions",
+    D7: "temporal dynamics & preference drift"
+  };
+  var DIM_ORDER = ["D1","D2","D3","D4","D5","D6","D7"];
+
+  var covCols = Array.prototype.slice.call(document.querySelectorAll('table.cov thead th.dim-col'));
+  var covRows = Array.prototype.slice.call(document.querySelectorAll('table.cov tbody tr'));
+
+  function covPaint(dim){
+    var col = dim ? DIM_ORDER.indexOf(dim) : -1;
+    covCols.forEach(function(th, i){
+      th.classList.toggle('hl', i === col);
+    });
+    covRows.forEach(function(tr){
+      Array.prototype.slice.call(tr.children).forEach(function(td, i){
+        td.classList.toggle('hl', col !== -1 && i === col + 1);
+      });
+    });
+  }
+
+  function apply(dim){
+    active = (active === dim) ? null : dim;
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-filter-dim') === active));
+    });
+
+    var shown = 0;
+    papers.forEach(function(p){
+      var dims = (p.getAttribute('data-dims') || "").split(/\s+/);
+      var match = !active || dims.indexOf(active) !== -1;
+      if (match) {
+        shown++;
+        p.classList.remove('is-out');
+        if (p.hidden) {
+          p.hidden = false;
+          if (motion) {
+            p.classList.add('is-enter');
+            window.requestAnimationFrame(function(){ p.classList.remove('is-enter'); });
+          }
+        }
+      } else if (!p.hidden) {
+        if (motion) {
+          p.classList.add('is-out');
+          window.setTimeout(function(){
+            if (p.classList.contains('is-out')) { p.hidden = true; }
+          }, 240);
+        } else {
+          p.hidden = true;
+        }
+      }
+    });
+
+    covPaint(active);
+
+    var msg = active
+      ? "Showing " + shown + " of 10 papers · " + active + " — " + DIM_NAMES[active] + "."
+      : "Showing all 10 papers.";
+    if (status) { status.textContent = msg; }
+    if (status2) { status2.textContent = active ? msg : ""; }
+  }
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-filter-dim')); });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && active) { apply(active); }
+  });
+})();
+</script>
+</body>
+</html>
