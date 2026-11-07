@@ -1,0 +1,21 @@
+- name: Publish site
+  # You may pin to the exact commit or the version.
+  # uses: publish-site/action@87b4aac36b939dece84e413b179523af1c7c9d8b
+  uses: publish-site/action@v2
+  with:
+    # URL or IP to send the data
+    url: # optional
+    # IP to send the data
+    ip: # optional
+    # Client Private key
+    privkey: # optional
+    # Client certificate (pubkey)
+    cert: # optional
+    # The directory to publish
+    dir: 
+    # SSH Port, default 2222
+    port: # optional
+    # SSH User, default root
+    user: # optional
+    # Output website directory, default /var/www/html
+    webdir: # optional
